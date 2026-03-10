@@ -204,3 +204,9 @@ If any check fails, revise before returning.
 - **Insufficient data**: If the context lacks quantification, use "(estimated)" or "(unverified)" and recommend gathering more data before sending. Mark confidence as Low.
 - **No clear ask**: If the context does not specify what decision is needed, add a placeholder: "[Ask to be defined: e.g., approve X, escalate to Y, descope Z]" and flag for human completion.
 - **Conflicting data**: If the context contains contradictory information, note it: "Context contains conflicting data on {topic}. Recommend verification before sending."
+
+## Anti-Patterns
+
+- **NEVER** write "This is urgent, fix now" without quantified impact. Every escalation must state what is at risk (SP, timeline, teams affected) and by when.
+- **NEVER** assign blame to individuals. Escalation memos describe the situation and its impact, not who caused it.
+- **NEVER** leave the Ask section vague. "Please help" is not an ask — "Approve option A by Wednesday" is.

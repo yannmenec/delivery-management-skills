@@ -4,6 +4,14 @@ All notable changes to Delivery Management Skills are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2026-03-10
+
+### Added
+- Chain of Verification (CoVe) phases in `generate-sprint-report`, `stakeholder-update`, and `assess-risk`
+- Self-consistency notes in `assess-risk` and `assess-epic-readiness` for ambiguous scoring
+- Anti-pattern sections in `generate-sprint-report`, `stakeholder-update`, `craft-escalation-memo`, and `format-for-audience`
+- Prompt injection hardening in `self-check` and `evaluate-output` (Input Safety sections)
+
 ## [1.0.3] - 2026-03-10
 
 ### Added

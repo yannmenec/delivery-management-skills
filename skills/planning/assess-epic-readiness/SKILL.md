@@ -199,3 +199,7 @@ Across all evaluated epics:
 - If epic data is sparse (title only, no description): score all dimensions as 0 (Missing) and classify as Not Ready. Note: "Insufficient data to evaluate — epic has no description or child tickets."
 - If a dimension is not applicable (e.g., no UX for a backend migration): score it as Ready (2) and note "N/A — no UX component." Do not penalize epics for dimensions that genuinely do not apply.
 - If fewer than 3 epics are provided: evaluate individually but note "Small sample — aggregate patterns may not be meaningful."
+
+## Self-Consistency Note
+
+For borderline epics (near the Ready/Partially Ready or Partially Ready/Not Ready threshold), consider whether a slightly different weighting of the dimensions would change the classification. If it would, note the ambiguity and downgrade confidence to Medium.

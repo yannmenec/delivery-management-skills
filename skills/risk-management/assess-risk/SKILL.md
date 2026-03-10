@@ -163,3 +163,17 @@ For each risk, classify the current mitigation:
 - If no risks are identified from the provided data: state "No material risks identified from the provided data. This may indicate low risk or insufficient data." Never fabricate risks.
 - If likelihood or impact cannot be assessed due to missing data: score conservatively (higher scores) and mark "(estimated — insufficient data for precise scoring)."
 - If the same risk appears in multiple categories (e.g., a blocked dependency is both a dependency risk and an execution risk): list it once under the primary category. Note the secondary impact.
+
+## Verification Phase
+
+After scoring all risks, independently verify:
+
+1. Does each risk score have supporting evidence from the provided data?
+2. Are there any duplicate risks scored separately that should be merged?
+3. Is the likelihood/impact consistent with the risk description (e.g., a risk described as "high probability" should not score 1 on likelihood)?
+
+If any verification fails, revise the scoring before delivering.
+
+## Self-Consistency Note
+
+For RAG assignment and severity scoring, consider whether a slightly different reading of the evidence would change the verdict. If two plausible interpretations yield different RAG statuses, downgrade confidence to Medium and note the ambiguity.

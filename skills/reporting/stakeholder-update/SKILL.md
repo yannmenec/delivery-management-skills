@@ -173,3 +173,19 @@ The default output is tuned for **engineering management** — operational detai
 - **Sparse data**: Proceed with available data. Note "Update based on partial data — {what's missing}."
 - **No decisions_pending**: Omit or use "None" in Decisions Needed. Do not fabricate decisions.
 - **Conflicting RAG signals**: Choose the dominant signal and note "Multiple factors — RAG driven primarily by {factor}."
+
+## Verification Phase
+
+After drafting the update, independently verify:
+
+1. Does every claim trace to provided sprint or project data?
+2. Are all metrics consistent with the source data (no rounding errors, no transposed numbers)?
+3. Is the update free of fabricated dates, ticket keys, or names?
+
+If any verification fails, revise before delivering.
+
+## Anti-Patterns
+
+- **NEVER** include ticket identifiers in C-level updates unless explicitly requested — executives need impact, not implementation details.
+- **NEVER** use technical jargon for product or executive audiences. "PR review bottleneck" becomes "code review delay affecting delivery timeline."
+- **NEVER** omit the RAG status — it is the single most important signal in a stakeholder update.
