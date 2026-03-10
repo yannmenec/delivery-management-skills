@@ -4,6 +4,34 @@ All notable changes to Delivery Management Skills are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.0] - 2026-03-10
+
+### Added
+- `detect-dependency-risk` skill — cross-team dependency risk detection with cascading chain analysis (sprint-operations)
+- Truth audit layer in `detect-ghost-done` (v1.1.0) — detects phantom-progress tickets (In Progress/In Review with no matching PR activity)
+- `depends_on` field in skill schema — explicit, machine-readable cross-skill dependency declarations
+- `scripts/validate-skills.sh` — validates all skills against schema, checks counts, resolves dependencies, validates workflows
+- `evals/results/` directory with 5 scored evaluation results (first framework execution)
+- `evals/golden-outputs/` with 3 reference outputs for regression testing (stuck-tickets, scope-change, risk-assessment)
+- Test case: `truth-audit-ghost-done` for the new phantom-progress detection layer
+- Test case: `dependency-risk-scenario-1` for the new detect-dependency-risk skill
+- Validation script documentation in `CONTRIBUTING.md`
+
+### Changed
+- Skill count: 20 → 21 (added detect-dependency-risk)
+- Schema `description.maxLength`: 200 → 300 (relaxed to match reality)
+- Removed `enrichment` from category enum (unused)
+- Standardized all "When to Apply" headers to "When to Use" across all skills
+- Standardized `model_compatibility` to multi-line YAML format in all skills
+- Updated skill authoring guide: `depends_on` field, corrected category list, section header name
+- Claude Code adapter synced with all 21 skills (was missing 4)
+- All architecture diagrams and badges updated to correct counts
+
+### Fixed
+- Skill count mismatches across README, Mermaid diagrams, Cursor adapter, Claude adapter
+- `evals/benchmarks/README.md` now references existing benchmark files
+- Created missing `evals/results/` directory
+
 ## [1.5.0] - 2026-03-10
 
 ### Added
