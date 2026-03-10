@@ -1,0 +1,50 @@
+graph LR
+    subgraph inputPhase [Input]
+        ManualData["Manual Data<br/>(paste, table, CSV)"]
+        MockData["Mock Data<br/>(sprint-data.json)"]
+        LiveData["Live Data<br/>(MCP, API — v2)"]
+    end
+
+    subgraph enrichPhase [Enrichment]
+        EnrichTracker["Tracker Data<br/>(tickets, statuses)"]
+        EnrichVCS["VCS Data<br/>(PRs, CI, reviews)"]
+        EnrichChat["Chat Data<br/>(mentions, PTO)"]
+    end
+
+    subgraph analysisPhase [Analysis]
+        Detection["Detection Skills<br/>stuck-tickets, ghost-done,<br/>scope-change, workload"]
+        Computation["Computation Skills<br/>velocity, capacity,<br/>risk scoring, forecast"]
+        Generation["Generation Skills<br/>reports, memos,<br/>updates, briefs"]
+    end
+
+    subgraph verifyPhase [Verification]
+        SelfCheck["self-check<br/>(5 binary checks)"]
+        EvalOutput["evaluate-output<br/>(6-dim scoring)"]
+        CiteSources["cite-sources<br/>(traceability)"]
+    end
+
+    subgraph outputPhase [Output]
+        Report["Structured Report"]
+        Formatted["Audience-Adapted<br/>(format-for-audience)"]
+    end
+
+    ManualData --> EnrichTracker
+    MockData --> EnrichTracker
+    LiveData --> EnrichTracker
+    LiveData --> EnrichVCS
+    LiveData --> EnrichChat
+
+    EnrichTracker --> Detection
+    EnrichTracker --> Computation
+    EnrichVCS -.-> Detection
+    EnrichChat -.-> Detection
+
+    Detection --> Generation
+    Computation --> Generation
+
+    Generation --> SelfCheck
+    SelfCheck --> EvalOutput
+    EvalOutput --> CiteSources
+
+    CiteSources --> Report
+    Report --> Formatted

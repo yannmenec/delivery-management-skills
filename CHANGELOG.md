@@ -4,6 +4,17 @@ All notable changes to Delivery Management Skills are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.0] - 2026-03-10
+
+### Added
+- Data flow architecture diagram (`showcase/architecture-diagrams/data-flow.mmd`)
+- Inline Mermaid architecture diagram in README
+- "What This Is Not" section in README
+- Badges (license, skill count, pattern count, adapter count) in README
+
+### Changed
+- README restructured: architecture-first lead, 30-second pitch, updated counts (18 skills, 10 patterns)
+
 ## [1.4.0] - 2026-03-10
 
 ### Added
