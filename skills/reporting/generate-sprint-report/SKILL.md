@@ -259,3 +259,20 @@ After generating the report, apply **format-for-audience** to adapt for differen
 - **Empty sprint**: Report "Sprint appears empty. Verify sprint scope or data source."
 - **Conflicting data**: If committed SP from context differs from ticket sum, show both and note the discrepancy.
 - **Sub-skill logic unavailable**: Skip the affected section and note the limitation. Never fabricate data.
+
+## Verification Phase
+
+After generating the draft report, independently verify before proceeding to self-check:
+
+1. Does the stated velocity match the sum of completed story points from the input data?
+2. Does the RAG status follow logically from the blockers, scope changes, and completion ratio?
+3. Are all ticket keys referenced in the report present in the input data?
+4. Do the recommendations reference specific, real tickets — not generic advice?
+
+If any verification fails, revise the draft before proceeding.
+
+## Anti-Patterns
+
+- **NEVER** report "on track" or Green RAG when active blockers exist without explicitly stating the mitigation plan.
+- **NEVER** include a metric that cannot be traced to the provided input data. If you cannot cite it, do not include it.
+- **NEVER** end with generic recommendations like "follow up on blockers." Every recommendation must name a ticket, an owner, or a concrete next step.

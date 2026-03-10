@@ -128,3 +128,9 @@ The reformatted content, prefixed with a metadata line:
 - If the input content is too sparse to reformat meaningfully: return the original content with a note: "Insufficient content for meaningful reformatting. Consider enriching the source output first."
 - If the audience is unknown: ask for clarification. Do not guess — wrong tone is worse than no transformation.
 - If the format is not in the supported list: apply markdown as default and note: "Unknown format '{format}' — defaulted to markdown."
+
+## Anti-Patterns
+
+- **NEVER** preserve technical jargon for non-technical audiences. If the source says "PR review bottleneck," the C-level version says "code review delay affecting delivery timeline."
+- **NEVER** exceed the target length for an audience. An executive update longer than 5 bullets has failed its purpose.
+- **NEVER** strip critical risks when reformatting. A blocker must appear in every audience version — only the framing changes, not the information.
