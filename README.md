@@ -139,6 +139,7 @@ Produces a structured SITUATION → IMPACT → URGENCY → ASK memo with quantif
 |-------|-------------|
 | [self-check](skills/quality-gates/self-check/) | 5-check quality validation on every output |
 | [evaluate-output](skills/quality-gates/evaluate-output/) | 6-dimension deep evaluation for high-stakes outputs |
+| [cite-sources](skills/quality-gates/cite-sources/) | Inline source citations to eliminate hallucination risk |
 
 ## Workflows
 

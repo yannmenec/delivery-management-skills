@@ -4,6 +4,16 @@ All notable changes to Delivery Management Skills are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1] - 2026-03-10
+
+### Added
+- `cite-sources` quality gate skill — inline source citations to eliminate hallucination risk
+- `evals/benchmarks/` directory with README stub
+
+### Fixed
+- Replaced internal project key reference (`LIVE-123`) with generic `PROJ-123` in human-approval-gate pattern
+- Replaced vendor-specific custom field IDs in graceful-degradation pattern and ADR-003 with generic descriptions
+
 ## [1.0.0] - 2026-03-10
 
 ### Added
