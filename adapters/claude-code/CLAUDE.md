@@ -19,6 +19,7 @@ You have access to a library of delivery management skills in the `delivery-skil
 - `delivery-skills/sprint-operations/detect-ghost-done/` — Find tickets that are done but not closed
 - `delivery-skills/sprint-operations/sprint-health-check/` — Composite sprint health assessment
 - `delivery-skills/sprint-operations/workload-balance/` — Detect uneven work distribution across team
+- `delivery-skills/sprint-operations/detect-dependency-risk/` — Cross-team dependency risk detection
 
 ### Risk Management
 - `delivery-skills/risk-management/assess-risk/` — Score risks with likelihood x impact matrix

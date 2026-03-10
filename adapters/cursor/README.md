@@ -15,7 +15,7 @@ This creates symlinks from the skill library into your workspace's `.cursor/` di
 
 | Source | Destination | Purpose |
 |--------|-------------|---------|
-| `skills/` | `.cursor/skills/` | All 20 delivery management skills |
+| `skills/` | `.cursor/skills/` | All 21 delivery management skills |
 | `adapters/cursor/rules/` | `.cursor/rules/` | Cursor-native rule files |
 | `adapters/cursor/agents/` | `.cursor/agents/` | Agent definitions |
 | `workflows/` | `.cursor/workflows/` | Composed multi-skill workflows |
