@@ -197,6 +197,11 @@ The library demonstrates proven agentic design techniques:
 | [Confidence Calibration](patterns/confidence-calibration.md) | Explicit uncertainty signaling | Every skill output |
 | [Graceful Degradation](patterns/graceful-degradation.md) | Partial output over no output | All enrichment paths |
 | [Human Approval Gate](patterns/human-approval-gate.md) | Gate write actions on approval | craft-unblock-message, escalation-memo |
+| [Planner-Executor-Reviewer](patterns/planner-executor-reviewer.md) | Plan → execute → review loop with bounded iteration | sprint-close-report workflow |
+| [Evaluator-Optimizer](patterns/evaluator-optimizer.md) | Score output, revise if below threshold | evaluate-output → generate-sprint-report |
+| [Memory and State](patterns/memory-and-state.md) | Cross-session persistence for trends | Alert deduplication, velocity tracking |
+| [Progressive Enhancement](patterns/progressive-enhancement.md) | Base → enhanced → full capability levels | Every skill (manual → integration → automation) |
+| [Control Plane](patterns/control-plane.md) | Single entry point routing to specialists | Cursor delivery-agent |
 
 ## Evaluation Framework
 

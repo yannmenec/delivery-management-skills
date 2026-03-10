@@ -74,4 +74,13 @@ Specialist skills (e.g., `detect-ghost-done`) may output per-item confidence (e.
 
 Downgrade from High to Medium when: one optional data source is missing; one source is stale; sample size is small (e.g., velocity from 2 sprints). Downgrade to Low when: core data is missing; multiple sources are stale; the agent had to estimate or infer critical values.
 
+## Calibration Tracking
+
+Over time, track whether confidence levels match reality:
+- Do "High confidence" predictions prove correct 90%+ of the time?
+- Do "Medium confidence" predictions prove correct 70-90%?
+- If High-confidence outputs frequently contain errors, the calibration thresholds need tightening.
+
+This tracking is manual in v1 (record outcomes in state files) and a candidate for automation in v2. The goal: confidence labels should be trustworthy signals, not decoration.
+
 **Summary**: Every skill output should include a confidence line. The self-check skill enforces this. Calibrate thresholds based on data completeness, freshness, and sample size. When in doubt, downgrade.
