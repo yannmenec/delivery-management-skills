@@ -38,9 +38,6 @@ Test cases in `test-cases/` provide known inputs and expected outputs. Use these
 
 ## Running Evaluations
 
-Currently, evaluation is manual:
-1. Feed the test case input into the skill
-2. Compare the output against the expected output and rubric
-3. Score using the rubric criteria
+See [HOW-TO-EVALUATE.md](HOW-TO-EVALUATE.md) for the complete manual evaluation process.
 
 Automated evaluation tooling is planned for v2.
