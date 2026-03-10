@@ -1,10 +1,27 @@
 # Delivery Management Skills
 
-Composable AI skills for Delivery Managers. Works with Cursor, Claude Code, and any AI coding assistant.
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
+[![Skills: 18](https://img.shields.io/badge/skills-18-green.svg)](#skill-library)
+[![Patterns: 10](https://img.shields.io/badge/patterns-10-purple.svg)](#agentic-patterns)
+[![Adapters: 2](https://img.shields.io/badge/adapters-2-orange.svg)](#adapters)
 
-> A modular, tool-agnostic library of delivery management skills that help DMs, Scrum Masters, and Engineering Managers operate faster and better — from daily sprint scans to PI planning, from blocker detection to stakeholder reporting.
+**Composable AI skills for Delivery Managers.** A structured, tested, tool-agnostic skill library that turns your AI coding assistant into a delivery management co-pilot. Sprint health checks in 90 seconds. Blocker detection across 4 layers. Stakeholder reports adapted for any audience. Works with Cursor, Claude Code, and any AI tool that reads markdown.
 
 ---
+
+## Architecture
+
+Skills are atomic. Workflows compose them. Quality gates validate every output. Adapters make installation one command.
+
+```mermaid
+graph LR
+    Input["Your Data<br/>(paste, mock, or live)"] --> Skills["18 Skills<br/>detect, compute,<br/>generate, evaluate"]
+    Skills --> QG["Quality Gates<br/>self-check → evaluate → cite"]
+    QG --> Output["Structured Output<br/>reports, memos, briefs"]
+    Output --> Format["format-for-audience<br/>C-level · Product · Engineering"]
+```
+
+See [full architecture diagrams](showcase/architecture-diagrams/) for system overview, skill composition, and data flow.
 
 ## The Problem
 
@@ -12,28 +29,20 @@ Delivery Managers spend 50-70% of their time on repetitive analytical work: chec
 
 This repository fills that gap.
 
-## How It Works
+## What This Is Not
 
-```
-You ask a question
-        │
-        ▼
-┌────────────────────┐
-│  AI Coding Tool    │    Reads skills from the library,
-│  (Cursor, Claude   │──▶ follows the method step-by-step,
-│   Code, Codex)     │    validates output with quality gates
-└────────────────────┘
-        │
-        ▼
-Structured, actionable output
-(reports, recommendations, memos, risk assessments)
-```
+- **Not a framework.** No runtime, no build step, no package manager. Clone and use.
+- **Not a chatbot.** Skills are structured prompts with contracts, not conversational agents.
+- **Not an "awesome-prompts" collection.** Every skill has typed inputs/outputs, evaluation rubrics, quality gates, and version history. Skills compose into workflows. Workflows produce verified output.
 
-- **15 skills** covering sprint operations, risk management, reporting, planning, communication, and quality validation
-- **3 workflows** that compose skills into end-to-end processes
-- **5 agentic patterns** documenting orchestration, verification, and safety techniques
+## At a Glance
+
+- **18 skills** across 7 categories: sprint operations, risk management, reporting, planning, communication, meeting prep, and quality gates
+- **3 workflows** composing skills into end-to-end processes
+- **10 agentic patterns** documenting orchestration, verification, memory, and safety techniques
 - **2 adapters** (Cursor + Claude Code) with one-command install
-- **Built-in evaluation** with rubrics, test cases, and quality gates
+- **5 test cases** with known inputs and expected outputs
+- **3 rubrics** with weighted scoring for systematic evaluation
 
 ## Quick Start
 
