@@ -20,7 +20,7 @@ inputs:
   - name: format
     type: text
     required: false
-    description: "Output format: markdown (default), slack, email, confluence, presentation-bullets."
+    description: "Output format: markdown (default), team-chat, email, wiki, presentation-bullets."
 outputs:
   - name: formatted_content
     type: text
@@ -100,9 +100,9 @@ Apply these transformations based on the audience:
 | Format | Constraints |
 |--------|-----------|
 | **Markdown** | Headers, tables, bold for key metrics. Standard for detailed reports. |
-| **Slack** | Max 5 bullets per section. Bold with `*text*`. No tables (use aligned text). Thread-friendly. |
+| **Team Chat** (Slack, Teams, Discord) | Max 5 bullets per section. Bold with `*text*`. No tables (use aligned text). Thread-friendly. |
 | **Email** | Subject line + 3-5 paragraph structure. Professional greeting/closing. Key metrics in first paragraph. |
-| **Confluence** | Wiki-compatible markdown. Link ticket keys to tracker. Use info/warning panels for highlights. |
+| **Wiki** (Confluence, Notion, etc.) | Wiki-compatible markdown. Link ticket keys to tracker. Use info/warning panels for highlights. |
 | **Presentation bullets** | One idea per bullet. Max 6 bullets per slide concept. No full sentences — fragments and metrics. |
 
 ### Step 4: Validate transformation
