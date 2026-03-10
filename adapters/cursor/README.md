@@ -18,6 +18,7 @@ This creates symlinks from the skill library into your workspace's `.cursor/` di
 | `skills/` | `.cursor/skills/` | All 15+ delivery management skills |
 | `adapters/cursor/rules/` | `.cursor/rules/` | Cursor-native rule files |
 | `adapters/cursor/agents/` | `.cursor/agents/` | Agent definitions |
+| `workflows/` | `.cursor/workflows/` | Composed multi-skill workflows |
 
 ## Manual Setup
 
@@ -26,7 +27,8 @@ If you prefer not to use the install script:
 1. Copy or symlink `skills/` into `.cursor/skills/` in your workspace
 2. Copy `adapters/cursor/rules/*.mdc` into `.cursor/rules/`
 3. Copy `adapters/cursor/agents/*.md` into `.cursor/agents/`
-4. Reload Cursor (`Cmd+Shift+P` > "Reload Window")
+4. Copy or symlink `workflows/*.md` into `.cursor/workflows/`
+5. Reload Cursor (`Cmd+Shift+P` / `Ctrl+Shift+P` > "Reload Window")
 
 ## MCP Configuration (Optional)
 
@@ -83,3 +85,13 @@ bash /path/to/delivery-management-skills/adapters/cursor/uninstall.sh
 ```
 
 This removes the symlinks without affecting your other Cursor configuration.
+
+## Smoke Test
+
+After installing, verify everything works:
+
+- [ ] `ls .cursor/skills/` shows skill directories (detect-stuck-tickets, compute-velocity, etc.)
+- [ ] `ls .cursor/workflows/` shows workflow files (morning-scan.md, etc.)
+- [ ] `ls .cursor/rules/` shows .mdc files
+- [ ] `ls .cursor/agents/` shows delivery-agent.md
+- [ ] In Cursor chat: "Read `.cursor/skills/detect-stuck-tickets/SKILL.md` and summarize it" returns a coherent summary

@@ -4,6 +4,18 @@ All notable changes to Delivery Management Skills are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.3] - 2026-03-10
+
+### Added
+- Cursor adapter: workflow symlinks in `install.sh`
+- Cursor adapter: `uninstall.sh` to cleanly remove symlinks
+- Claude Code adapter: mock data symlink (`delivery-skills/mock/`)
+- Smoke test checklists in both adapter READMEs
+
+### Fixed
+- Claude Code `install.sh`: idempotent re-runs (marker-based duplicate detection)
+- Demo scenario paths: use repo-relative `integrations/mock/` for Claude Code examples
+
 ## [1.0.2] - 2026-03-10
 
 ### Changed
