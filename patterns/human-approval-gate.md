@@ -74,7 +74,7 @@ autonomy: autonomous | supervised | human-in-the-loop
 - **`skills/communication/craft-close-message/SKILL.md`**: Same pattern—draft comment for ghost-done tickets, human posts.
 - **`skills/sprint-operations/sprint-health-check/SKILL.md`**: `autonomy: supervised` — composite orchestrator; human reviews the full report.
 
-**Example flow**: `detect-stuck-tickets` (supervised) identifies LIVE-123 as stuck. The DM reviews. They invoke `craft-unblock-message` (human-in-the-loop) with LIVE-123 context. The skill produces a draft comment. The DM edits if needed and posts—or does not post.
+**Example flow**: `detect-stuck-tickets` (supervised) identifies PROJ-123 as stuck. The DM reviews. They invoke `craft-unblock-message` (human-in-the-loop) with PROJ-123 context. The skill produces a draft comment. The DM edits if needed and posts—or does not post.
 
 ## Pitfalls
 

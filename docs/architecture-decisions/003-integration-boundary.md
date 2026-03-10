@@ -24,7 +24,7 @@ Integrations are an **optional enhancement layer** (`integrations/`). They provi
 
 Live connectors (MCP servers, API clients) are planned for v2+, not v1.
 
-Skills reference data abstractly ("sprint tickets with status, assignee, and dates") rather than using vendor-specific terminology ("Jira issues with customfield_10028").
+Skills reference data abstractly ("sprint tickets with status, assignee, and dates") rather than using vendor-specific terminology (e.g., tracker-specific custom field IDs for story points).
 
 ## Consequences
 

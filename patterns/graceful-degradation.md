@@ -49,7 +49,7 @@ Per `data-sources.mdc`:
 
 | Source | Primary | Fallback | Last Resort |
 |--------|---------|----------|-------------|
-| GitHub | GitHub MCP | Jira dev panel (`customfield_10000`) | Skip with note |
+| GitHub | GitHub MCP | Tracker dev panel (PR custom field) | Skip with note |
 | Confluence | Atlassian MCP (CQL) | — | Skip with note |
 | Slack, Monday | MCP | — | Skip with note |
 
