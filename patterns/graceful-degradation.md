@@ -78,3 +78,15 @@ Per `data-sources.mdc`:
 - **Vague caveats**: "Some data was missing" is useless. Specify: "PR status missing for 6 of 10 tickets."
 - **Cascading failure**: If the orchestrator fails when one specialist fails, the whole workflow dies. Design orchestrators to merge partial results.
 - **Stale data handling**: Per freshness thresholds, data older than 24h (Jira/GitHub), 30d (Confluence), or 7d (Slack/Monday) should be flagged. Don't silently use stale data—note it and consider downgrading confidence.
+
+## Circuit Breaker
+
+After N consecutive failures from a data source within the same session, stop retrying for the remainder of that session. This prevents retry storms that waste tokens and time.
+
+| Consecutive Failures | Action |
+|---------------------|--------|
+| 1 | Retry once |
+| 2 | Skip with note, mark source as degraded |
+| 3+ | Circuit open — skip all requests to this source for the session |
+
+When the circuit is open, all skills that would query the degraded source proceed without it and note the gap. The circuit resets at the start of the next session.

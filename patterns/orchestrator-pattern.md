@@ -74,4 +74,11 @@ A **workflow** (e.g., `morning-scan`) is a documented composition—it lists ski
 - **Merge logic complexity**: As more specialists are added, the prioritization and merge rules become harder to maintain. Document the merge logic explicitly (e.g., "Needs Attention" vs "Heads Up" criteria) and keep it in one place.
 - **Input consistency**: All specialists must receive the same input schema. If one needs `pr_status` and another doesn't, the orchestrator must still pass it through. Document the shared input contract in the workflow.
 
+## Anti-Patterns
+
+- **Over-delegation**: Delegating a task that is simpler than the delegation overhead. If asking a specialist takes more tokens than doing it inline, skip the delegation.
+- **Context loss (telephone game)**: Each hand-off between orchestrator and specialist loses context. Minimize the number of hops. Pass full context to specialists rather than summaries of summaries.
+- **Orchestrator as bottleneck**: If the orchestrator serially calls specialists that could run in parallel, latency multiplies. Always identify which specialists can run concurrently.
+- **Hidden coupling**: Specialists that depend on each other's output are not truly independent. If specialist B needs specialist A's output, make this dependency explicit in the workflow — do not bury it in the orchestrator's merge logic.
+
 **Summary**: Use orchestration when you have multiple independent specialists and a composite output. Use a single skill when the task is atomic. The morning-scan and sprint-health-check workflows demonstrate the pattern in practice. Prefer parallel execution where specialists share input.

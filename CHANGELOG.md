@@ -4,6 +4,15 @@ All notable changes to Delivery Management Skills are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2026-03-10
+
+### Added
+- 5 new agentic pattern documents: planner-executor-reviewer, memory-and-state, progressive-enhancement, evaluator-optimizer, control-plane
+- Anti-patterns section in orchestrator pattern
+- Calibration tracking section in confidence-calibration pattern
+- Circuit breaker section in graceful-degradation pattern
+- Pattern table in README expanded from 5 to 10 entries
+
 ## [1.1.0] - 2026-03-10
 
 ### Added
