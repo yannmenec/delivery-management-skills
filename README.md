@@ -103,6 +103,7 @@ Produces a structured SITUATION → IMPACT → URGENCY → ASK memo with quantif
 | [detect-scope-change](skills/sprint-operations/detect-scope-change/) | Tickets added/removed mid-sprint with impact classification |
 | [detect-ghost-done](skills/sprint-operations/detect-ghost-done/) | Tickets that are done but stuck in intermediate status |
 | [sprint-health-check](skills/sprint-operations/sprint-health-check/) | Composite health assessment with RAG status |
+| [workload-balance](skills/sprint-operations/workload-balance/) | Detect uneven work distribution across team members |
 
 ### Risk Management
 
@@ -125,6 +126,13 @@ Produces a structured SITUATION → IMPACT → URGENCY → ASK memo with quantif
 |-------|-------------|
 | [assess-epic-readiness](skills/planning/assess-epic-readiness/) | 7-dimension epic maturity scoring for PI planning |
 | [compute-capacity](skills/planning/compute-capacity/) | Team capacity from headcount, PTO, and buffer |
+| [forecast-completion](skills/planning/forecast-completion/) | Probabilistic completion estimates from velocity distribution |
+
+### Meeting Prep
+
+| Skill | What It Does |
+|-------|-------------|
+| [standup-brief](skills/meeting-prep/standup-brief/) | Quick morning briefing: happened, stuck, needs attention |
 
 ### Communication
 
