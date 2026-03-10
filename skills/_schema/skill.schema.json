@@ -83,7 +83,7 @@
     "tools_optional": {
       "type": "array",
       "items": { "type": "string" },
-      "description": "Optional integrations that enhance this skill (e.g. jira, github, slack)"
+      "description": "Optional integrations that enhance this skill (e.g. project-tracker, version-control, team-chat)"
     },
     "model_compatibility": {
       "type": "array",

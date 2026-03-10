@@ -4,6 +4,16 @@ All notable changes to Delivery Management Skills are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.2] - 2026-03-10
+
+### Changed
+- Replace vendor-specific format names in `format-for-audience` (Slack → Team Chat, Confluence → Wiki)
+- Replace tracker-specific language in `detect-stuck-tickets` and `evaluate-output` with generic terms
+- Use generic tool names in `skill.schema.json` examples (project-tracker, version-control, team-chat)
+- Add skill definition and glossary link to Getting Started guide
+- Add Bash/WSL prerequisite note to Getting Started and install scripts
+- Use cross-platform keyboard shortcuts in documentation
+
 ## [1.0.1] - 2026-03-10
 
 ### Added

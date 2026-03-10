@@ -101,7 +101,7 @@ Evaluate whether the tone matches the intended audience.
 | Engineering Team | Direct, actionable, specific tickets and owners |
 
 **Score 2**: Tone is appropriate throughout.
-**Score 1**: Mostly appropriate with minor lapses (e.g., Jira keys in a C-level update).
+**Score 1**: Mostly appropriate with minor lapses (e.g., ticket identifiers in a C-level update).
 **Score 0**: Tone mismatch (e.g., highly technical language for a VP audience).
 
 ### Dimension 5: Cross-Reference Consistency

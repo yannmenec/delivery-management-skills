@@ -86,7 +86,7 @@ If providing data manually, a simple table or structured list is sufficient.
 Apply all four layers to every non-Done ticket. A ticket can match multiple layers.
 
 **Layer 0 — Flagged Impediments**
-Tickets explicitly flagged with an impediment marker (e.g., red flag in Jira, "blocked" label in Linear).
+Tickets explicitly flagged with an impediment marker in your project tracker (e.g., red flag, "blocked" label).
 
 - Detection: `flagged = true` or `labels contains "impediment"` or `labels contains "blocked"`
 - Why it matters: Someone already raised a concern. These need immediate attention regardless of other signals.

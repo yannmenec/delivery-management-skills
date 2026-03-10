@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Requires Bash. On Windows, use WSL or Git Bash.
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"

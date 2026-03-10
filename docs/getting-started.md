@@ -2,10 +2,15 @@
 
 Get your first useful output from Delivery Management Skills in under 5 minutes.
 
+## What is a Skill?
+
+A **skill** is a structured prompt document with explicit inputs, outputs, and quality checks. Unlike raw prompts, skills are tested, composable, and versioned units of delivery intelligence. See the [glossary](glossary.md) for more terms.
+
 ## Prerequisites
 
 - An AI coding assistant (Cursor, Claude Code, or any tool that can read markdown)
 - Git (to clone the repository)
+- Bash (for adapter install scripts; on Windows, use WSL or Git Bash)
 - Sprint data from your team (or use the included mock data to try it out)
 
 ## Step 1: Clone the Repository
@@ -22,7 +27,7 @@ git clone https://github.com/yannmenec/delivery-management-skills.git
 bash delivery-management-skills/adapters/cursor/install.sh /path/to/your/workspace
 ```
 
-Reload Cursor: `Cmd+Shift+P` > "Reload Window"
+Reload Cursor: `Cmd+Shift+P` (macOS) / `Ctrl+Shift+P` (Windows/Linux) > "Reload Window"
 
 ### Claude Code
 
@@ -95,7 +100,7 @@ If you use Jira, GitHub, or Slack with MCP support in your AI tool, skills will 
 
 ## Troubleshooting
 
-**Skills are not showing up in Cursor**: Reload the window (`Cmd+Shift+P` > "Reload Window"). Check that `.cursor/skills/` contains symlinks to the skill directories.
+**Skills are not showing up in Cursor**: Reload the window (`Cmd+Shift+P` / `Ctrl+Shift+P` > "Reload Window"). Check that `.cursor/skills/` contains symlinks to the skill directories.
 
 **Output seems generic**: Make sure you are providing specific sprint data (ticket keys, statuses, dates). The more specific your input, the more specific the output.
 
