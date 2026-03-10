@@ -52,7 +52,7 @@ model_compatibility:
 
 Identify tickets that are blocked, stale, or silently stuck in the active sprint. Produces a prioritized list with detection layers, severity scoring, and recommended next actions.
 
-## When to Apply
+## When to Use
 
 - Daily sprint scan or standup preparation
 - Blocker review meetings

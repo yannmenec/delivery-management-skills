@@ -37,7 +37,7 @@ model_compatibility:
 
 Evaluate delivery risks using a structured likelihood-impact matrix. Produces a scored risk register with RAG status, severity ranking, and actionable mitigation recommendations.
 
-## When to Apply
+## When to Use
 
 - Sprint planning (identify risks to the sprint goal)
 - PI planning (identify risks to PI objectives)

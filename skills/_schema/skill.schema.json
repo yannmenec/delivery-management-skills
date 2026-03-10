@@ -17,7 +17,7 @@
     },
     "description": {
       "type": "string",
-      "maxLength": 200,
+      "maxLength": 300,
       "description": "One-line description of what the skill does and when to use it"
     },
     "category": {
@@ -29,8 +29,7 @@
         "planning",
         "quality-gates",
         "communication",
-        "meeting-prep",
-        "enrichment"
+        "meeting-prep"
       ]
     },
     "trigger": {
@@ -80,6 +79,14 @@
           "description": { "type": "string" }
         }
       }
+    },
+    "depends_on": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]+$"
+      },
+      "description": "Skills whose logic this skill directly invokes in its Method. Only structural dependencies — not soft references or alternatives."
     },
     "tools_optional": {
       "type": "array",

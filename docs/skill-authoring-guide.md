@@ -25,7 +25,7 @@ YAML frontmatter defines machine-readable metadata:
 ---
 name: my-skill-name                    # kebab-case, unique
 version: 1.0.0                         # semantic versioning
-description: >                         # one-line, under 200 chars
+description: >                         # one-line, under 300 chars
   What this skill does and when to use it.
 category: sprint-operations            # see categories below
 trigger: When this skill should be invoked.
@@ -43,6 +43,9 @@ outputs:
   - name: output_name
     type: structured-text
     description: What this produces.
+depends_on:                            # optional — skills this skill invokes in its Method
+  - detect-stuck-tickets
+  - compute-velocity
 tools_optional:                        # optional
   - project-tracker
   - version-control
@@ -64,14 +67,14 @@ model_compatibility:                   # optional, defaults to all
 | `planning` | PI/quarter planning, capacity, readiness assessment |
 | `communication` | Message crafting for tickets, stakeholders, teams |
 | `quality-gates` | Output validation and evaluation |
-| `enrichment` | Data source integration and enrichment |
+| `meeting-prep` | Meeting preparation, briefings, agendas |
 
 ### Body Sections
 
 | Section | Required | Purpose |
 |---------|----------|---------|
 | `# Title` | Yes | Clear, descriptive title |
-| `## When to Apply` | Yes | Trigger scenarios in bullet form |
+| `## When to Use` | Yes | Trigger scenarios in bullet form |
 | `## Method` | Yes | Numbered steps the AI follows |
 | `## Output Format` | Yes | Exact template for the output |
 | `## Error Handling` | Yes | How to handle missing data, failures, edge cases |

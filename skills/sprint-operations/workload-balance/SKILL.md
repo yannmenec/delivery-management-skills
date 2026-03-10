@@ -23,7 +23,11 @@ outputs:
   - name: workload_report
     type: structured-text
     description: Per-person workload summary with imbalance flags and recommendations.
-model_compatibility: [claude, gpt-4, gemini, llama-3]
+model_compatibility:
+  - claude
+  - gpt-4
+  - gemini
+  - llama-3
 ---
 
 # Workload Balance

@@ -48,7 +48,7 @@ Produces a concise, stakeholder-focused status update. Shorter than a full sprin
 
 For a comprehensive sprint report, use **generate-sprint-report** instead. After generating this update, apply **format-for-audience** to adapt for audiences other than engineering management (C-level, Product, Engineering Team, Cross-team).
 
-## When to Apply
+## When to Use
 
 - Quick status request from a stakeholder
 - Weekly stakeholder sync preparation

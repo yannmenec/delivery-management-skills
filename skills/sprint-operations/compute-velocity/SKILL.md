@@ -38,7 +38,7 @@ model_compatibility:
 
 Calculate team velocity across sprints, identify trends, assess predictability, and forecast current sprint completion.
 
-## When to Apply
+## When to Use
 
 - Sprint reviews and retrospectives
 - Capacity planning for upcoming sprints or PIs

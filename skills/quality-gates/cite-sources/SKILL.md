@@ -21,7 +21,11 @@ outputs:
     type: structured-text
     description: The agent output with inline citations added after every metric, claim, and ticket reference
 tools_optional: []
-model_compatibility: [claude, gpt-4, gemini, llama-3]
+model_compatibility:
+  - claude
+  - gpt-4
+  - gemini
+  - llama-3
 ---
 
 # Cite Sources

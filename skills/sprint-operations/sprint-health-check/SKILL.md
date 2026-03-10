@@ -53,6 +53,11 @@ outputs:
     type: text
     description: >
       Single RAG indicator: Green, Amber, or Red with one-line justification.
+depends_on:
+  - detect-stuck-tickets
+  - compute-velocity
+  - detect-scope-change
+  - detect-ghost-done
 tools_optional:
   - project-tracker
   - version-control
@@ -67,7 +72,7 @@ model_compatibility:
 
 A composite workflow that orchestrates multiple detection and computation skills to produce a comprehensive sprint health report with RAG status. Works entirely from manually provided data — no live API dependency.
 
-## When to Apply
+## When to Use
 
 - Daily sprint pulse or standup preparation
 - Mid-sprint checkpoint reviews

@@ -16,10 +16,25 @@ Thank you for considering a contribution to Delivery Management Skills.
 
 1. Read the [skill authoring guide](docs/skill-authoring-guide.md)
 2. Create your skill in the appropriate category under `skills/`
-3. Validate your skill's frontmatter against `skills/_schema/skill.schema.json`
+3. Run the validation script: `bash scripts/validate-skills.sh` — it must pass with 0 errors
 4. Include at least one example (input + expected output)
 5. Run the `self-check` skill against your skill's output
 6. Open a pull request with a clear description of the skill's purpose
+
+### Validation Script
+
+Run `bash scripts/validate-skills.sh` before every PR. It checks:
+
+- YAML frontmatter presence and required fields
+- Field values match schema enums (category, autonomy, portability, complexity, type)
+- Name pattern and directory name consistency
+- Version follows semver
+- Description length within limit
+- Required body sections present (`## When to Use`, `## Method`, `## Output Format`, `## Error Handling`)
+- `model_compatibility` uses multi-line format
+- `depends_on` references resolve to existing skills
+- Skill counts match README and adapters
+- Workflow `skills_used` references resolve to existing skills
 
 ### For Adapters
 

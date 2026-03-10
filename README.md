@@ -1,7 +1,7 @@
 # Delivery Management Skills
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
-[![Skills: 18](https://img.shields.io/badge/skills-18-green.svg)](#skill-library)
+[![Skills: 20](https://img.shields.io/badge/skills-20-green.svg)](#skill-library)
 [![Patterns: 10](https://img.shields.io/badge/patterns-10-purple.svg)](#agentic-patterns)
 [![Adapters: 2](https://img.shields.io/badge/adapters-2-orange.svg)](#adapters)
 
@@ -15,7 +15,7 @@ Skills are atomic. Workflows compose them. Quality gates validate every output. 
 
 ```mermaid
 graph LR
-    Input["Your Data<br/>(paste, mock, or live)"] --> Skills["18 Skills<br/>detect, compute,<br/>generate, evaluate"]
+    Input["Your Data<br/>(paste, mock, or live)"] --> Skills["20 Skills<br/>detect, compute,<br/>generate, evaluate"]
     Skills --> QG["Quality Gates<br/>self-check → evaluate → cite"]
     QG --> Output["Structured Output<br/>reports, memos, briefs"]
     Output --> Format["format-for-audience<br/>C-level · Product · Engineering"]
@@ -37,7 +37,7 @@ This repository fills that gap.
 
 ## At a Glance
 
-- **18 skills** across 7 categories: sprint operations, risk management, reporting, planning, communication, meeting prep, and quality gates
+- **20 skills** across 7 categories: sprint operations, risk management, reporting, planning, communication, meeting prep, and quality gates
 - **3 workflows** composing skills into end-to-end processes
 - **10 agentic patterns** documenting orchestration, verification, memory, and safety techniques
 - **2 adapters** (Cursor + Claude Code) with one-command install

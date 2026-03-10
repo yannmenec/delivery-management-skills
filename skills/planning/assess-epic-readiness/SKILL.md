@@ -39,7 +39,7 @@ model_compatibility:
 
 Evaluate whether epics meet a quality bar for planning commitment. Prevents teams from committing to poorly defined work that will derail mid-sprint.
 
-## When to Apply
+## When to Use
 
 - Before PI or quarterly planning sessions
 - During backlog grooming when epics are promoted to "ready for planning"
