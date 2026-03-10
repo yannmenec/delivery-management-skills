@@ -1,10 +1,10 @@
 ---
 name: detect-ghost-done
-version: 1.0.0
+version: 1.1.0
 description: >
-  Detects tickets that appear completed (PR merged, version released, deployment
-  complete) but remain in an intermediate status. Surfaces status hygiene issues
-  that inflate WIP and distort sprint metrics.
+  Detects ghost-done tickets (done but not closed) and phantom-progress tickets
+  (claiming progress but no code activity). Surfaces status hygiene issues
+  that inflate WIP and distort sprint metrics. Includes truth audit layer.
 category: sprint-operations
 trigger: Sprint health check, status hygiene review, velocity accuracy, sprint report
 autonomy: supervised
@@ -191,6 +191,55 @@ For each ghost-done ticket, suggest a specific action based on current status:
 - **Velocity underreported by**: {N} SP
 - **Completion underreported by**: {N} tickets ({percentage}% of sprint)
 - **Effective completed**: {done_count + ghost_done_count} tickets, {done_sp + ghost_done_sp} SP
+```
+
+### Step 8: Truth Audit — PR Activity Cross-Reference (Progressive Enhancement)
+
+This step activates only when `pr_status` and `days_in_current_status` data are available. It detects **phantom-progress** tickets — tickets that report In Progress or In Review but show no corresponding code activity, indicating the reported status may not reflect reality.
+
+For each non-terminal ticket where `pr_status` is available:
+
+| Current Status | PR Status | Days in Status | Finding |
+|----------------|-----------|---------------|---------|
+| In Progress | `none` | > 3 days | **Phantom progress** — ticket claims active work but no PR exists after 3+ days |
+| In Progress | `draft` | > 5 days | **Stale draft** — PR started but no review cycle after 5 days |
+| In Review | `none` or `draft` | > 3 days | **Phantom review** — ticket in review but no reviewable PR |
+| In Review | `open` | > 5 days | **Stale review** — PR open for review but no progress after 5 days |
+
+For each finding, classify:
+
+| Phantom Type | Confidence | Implication |
+|-------------|-----------|-------------|
+| In Progress + no PR > 3 days | Medium | Possible hidden blocker or task not yet started |
+| In Progress + draft PR > 5 days | Medium-High | Complexity or blocker not surfaced |
+| In Review + no reviewable PR > 3 days | High | Status is incorrect or PR was abandoned |
+| In Review + stale open PR > 5 days | Medium | Review bottleneck or abandoned review |
+
+**Output truth audit findings separately from ghost-done findings** — these are different problems. Ghost-done tickets need to move forward to Done. Phantom-progress tickets need investigation.
+
+**Graceful degradation**: If `pr_status` is missing for all tickets, skip this step entirely and note: "Truth audit skipped — PR data unavailable." If available for some tickets, run on those and note partial coverage.
+
+## Truth Audit Output Format
+
+```
+## Truth Audit: {count} phantom-progress tickets found
+
+{If 0: "All In Progress and In Review tickets show consistent PR activity. No phantom-progress detected."}
+
+---
+
+### [{KEY}] {summary}
+
+- **Claimed Status**: {status} ({days} days)
+- **Actual PR Activity**: {pr_status} — {interpretation}
+- **Assignee**: {assignee}
+- **Story Points**: {sp}
+- **Finding**: {Phantom progress | Stale draft | Phantom review | Stale review}
+- **Confidence**: {Medium | Medium-High | High}
+
+**Recommended Action**: {action — e.g., "Check in with assignee to understand actual progress and surface any hidden blockers."}
+
+---
 ```
 
 ## Error Handling
