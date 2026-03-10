@@ -44,6 +44,8 @@ outputs:
     description: >
       Full sprint report with RAG status, executive summary, progress, velocity,
       blockers, scope changes, risks, and recommendations.
+depends_on:
+  - self-check
 model_compatibility:
   - claude
   - gpt-4
@@ -57,7 +59,7 @@ The "hero" skill for sprint reporting. Produces a comprehensive, end-to-end spri
 
 For a lighter, stakeholder-focused update, use **stakeholder-update** instead. After generating this report, apply **format-for-audience** to adapt the content for different audiences (C-level, Product, Engineering Team, Cross-team).
 
-## When to Apply
+## When to Use
 
 - Sprint review preparation (day before or day of)
 - End-of-sprint reporting to stakeholders

@@ -52,7 +52,7 @@ model_compatibility:
 
 Identifies tickets added to or removed from the sprint after sprint start. Computes scope change percentage and classifies impact. Works entirely from manually provided data — no live project tracker required.
 
-## When to Apply
+## When to Use
 
 - Sprint health checks and mid-sprint reviews
 - Scope stability analysis for predictability reporting

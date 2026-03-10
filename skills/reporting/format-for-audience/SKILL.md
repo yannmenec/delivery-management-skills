@@ -36,7 +36,7 @@ model_compatibility:
 
 Adapt delivery management content for specific audiences and output channels. The same sprint data should read differently for a VP than for the engineering team.
 
-## When to Apply
+## When to Use
 
 - Before sharing any generated report, update, or assessment
 - When the same information needs to reach multiple audiences

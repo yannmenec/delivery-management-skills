@@ -11,8 +11,9 @@ Each benchmark documents:
 
 ## Available Benchmarks
 
-_Benchmarks will be added as part of the evaluation framework expansion._
+- [Sprint Report: Before vs After](before-after-sprint-report.md)
+- [Morning Scan: Before vs After](before-after-morning-scan.md)
 
 ## Methodology
 
-See `methodology.md` (coming soon) for how to run and record benchmark comparisons.
+See [methodology.md](methodology.md) for how to run and record benchmark comparisons.

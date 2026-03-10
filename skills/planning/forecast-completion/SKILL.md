@@ -32,7 +32,11 @@ outputs:
   - name: forecast
     type: structured-text
     description: Probability distribution with 50th, 80th, and 95th percentile completion estimates.
-model_compatibility: [claude, gpt-4, gemini, llama-3]
+model_compatibility:
+  - claude
+  - gpt-4
+  - gemini
+  - llama-3
 ---
 
 # Forecast Completion

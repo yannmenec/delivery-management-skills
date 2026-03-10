@@ -55,7 +55,7 @@ model_compatibility:
 
 Calculate how much work a team can realistically take on in a sprint or PI. Prevents over-commitment by accounting for PTO, holidays, and operational overhead.
 
-## When to Apply
+## When to Use
 
 - Sprint planning: "How much can we commit to?"
 - PI planning: "What is our capacity for the next 6 weeks?"

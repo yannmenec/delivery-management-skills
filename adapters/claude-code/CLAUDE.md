@@ -18,6 +18,7 @@ You have access to a library of delivery management skills in the `delivery-skil
 - `delivery-skills/sprint-operations/detect-scope-change/` — Identify scope changes mid-sprint
 - `delivery-skills/sprint-operations/detect-ghost-done/` — Find tickets that are done but not closed
 - `delivery-skills/sprint-operations/sprint-health-check/` — Composite sprint health assessment
+- `delivery-skills/sprint-operations/workload-balance/` — Detect uneven work distribution across team
 
 ### Risk Management
 - `delivery-skills/risk-management/assess-risk/` — Score risks with likelihood x impact matrix
@@ -31,6 +32,10 @@ You have access to a library of delivery management skills in the `delivery-skil
 ### Planning
 - `delivery-skills/planning/assess-epic-readiness/` — Evaluate epic maturity for planning
 - `delivery-skills/planning/compute-capacity/` — Calculate team capacity
+- `delivery-skills/planning/forecast-completion/` — Probabilistic completion estimates from velocity distribution
+
+### Meeting Prep
+- `delivery-skills/meeting-prep/standup-brief/` — Quick morning briefing for standup prep
 
 ### Communication
 - `delivery-skills/communication/craft-unblock-message/` — Draft messages to unblock stuck tickets
@@ -39,6 +44,7 @@ You have access to a library of delivery management skills in the `delivery-skil
 ### Quality Gates
 - `delivery-skills/quality-gates/self-check/` — 5-check quality validation (run on every output)
 - `delivery-skills/quality-gates/evaluate-output/` — 6-dimension deep evaluation (run on high-stakes outputs)
+- `delivery-skills/quality-gates/cite-sources/` — Inline source citations to eliminate hallucination risk
 
 ## Workflows
 

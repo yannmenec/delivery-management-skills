@@ -34,7 +34,7 @@ model_compatibility:
 
 Generate a short, contextual message designed to unblock a stuck ticket. The message uses a **question-first approach**: never demand action, always ask a question that surfaces the real blocker.
 
-## When to Apply
+## When to Use
 
 - A stuck ticket has been detected and needs a nudge comment
 - A delivery manager wants to proactively reach out about a ticket with no recent activity

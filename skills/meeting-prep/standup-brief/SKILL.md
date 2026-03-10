@@ -23,7 +23,11 @@ outputs:
   - name: standup_brief
     type: structured-text
     description: 3-section briefing (Happened, Stuck, Attention) with ticket-level detail.
-model_compatibility: [claude, gpt-4, gemini, llama-3]
+model_compatibility:
+  - claude
+  - gpt-4
+  - gemini
+  - llama-3
 ---
 
 # Standup Brief

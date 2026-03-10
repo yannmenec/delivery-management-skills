@@ -31,7 +31,7 @@ model_compatibility:
 
 Lightweight quality gate that runs after every skill execution. Catches the most common output defects (80% of issues) without the overhead of a full evaluation pass.
 
-## When to Apply
+## When to Use
 
 Every skill and workflow should invoke `self-check` as the final step before presenting output. For high-stakes outputs (sprint reports, stakeholder updates, PI plans), also run `evaluate-output` as a second pass.
 

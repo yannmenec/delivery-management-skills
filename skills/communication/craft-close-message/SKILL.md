@@ -34,7 +34,7 @@ model_compatibility:
 
 Generate a short, evidence-based message suggesting that a ghost-done ticket (one that appears complete but is not yet marked Done) be transitioned to Done. Tone: helpful, not commanding. Always ask; never assume or auto-close.
 
-## When to Apply
+## When to Use
 
 - A ghost-done ticket has been detected (PR merged, version released, or all subtasks done, but status still open)
 - A delivery manager wants to nudge status hygiene without sounding accusatory

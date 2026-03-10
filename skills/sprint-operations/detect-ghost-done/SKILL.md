@@ -57,7 +57,7 @@ model_compatibility:
 
 Identifies tickets that are effectively complete (code merged, version released, or deployed) but still sit in an intermediate status like In Progress, In Review, or QA. These represent status hygiene issues that inflate work-in-progress and underreport velocity and completion.
 
-## When to Apply
+## When to Use
 
 - Sprint health checks and status hygiene reviews
 - Sprint report preparation (to correct completion metrics)

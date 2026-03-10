@@ -32,7 +32,7 @@ model_compatibility:
 
 Generate a structured escalation document for leadership. The memo must be evidence-based: every claim backed by data. Tone: professional, urgent without panic, factual.
 
-## When to Apply
+## When to Use
 
 - A critical risk requires leadership attention or a decision beyond the team's scope
 - A blocker is affecting delivery timeline and needs external intervention

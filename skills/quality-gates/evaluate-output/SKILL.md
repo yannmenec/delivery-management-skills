@@ -36,7 +36,7 @@ model_compatibility:
 
 Thorough quality evaluation for delivery management outputs that will be shared with stakeholders, posted to channels, or used for decision-making. More rigorous than `self-check` — use this for high-stakes outputs.
 
-## When to Apply
+## When to Use
 
 - Sprint reports before sharing with leadership
 - Stakeholder updates before sending
