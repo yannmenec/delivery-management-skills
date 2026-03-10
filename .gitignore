@@ -1,0 +1,15 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# State (generated at runtime by adapters)
+state/
+
+# Node (if adapters use it)
+node_modules/

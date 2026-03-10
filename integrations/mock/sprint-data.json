@@ -1,0 +1,245 @@
+{
+  "sprint": {
+    "name": "Sprint 26.2-2",
+    "start_date": "2026-03-09",
+    "end_date": "2026-03-21",
+    "days_remaining": 8,
+    "goal": "Complete user onboarding flow and address critical payment bugs"
+  },
+  "team": {
+    "name": "Horizon",
+    "members": [
+      { "name": "Alex Chen", "role": "Senior Developer" },
+      { "name": "Maria Santos", "role": "Developer" },
+      { "name": "James Wilson", "role": "Developer" },
+      { "name": "Priya Patel", "role": "Developer" },
+      { "name": "Luca Moretti", "role": "Developer" },
+      { "name": "Sophie Dubois", "role": "QA Engineer" }
+    ]
+  },
+  "tickets": [
+    {
+      "key": "HRZ-401",
+      "summary": "Implement user onboarding wizard - step 1 (profile creation)",
+      "type": "Story",
+      "status": "Done",
+      "assignee": "Alex Chen",
+      "priority": "High",
+      "story_points": 5,
+      "days_in_current_status": 1,
+      "last_updated": "2026-03-12",
+      "labels": [],
+      "linked_issues": [],
+      "pr_status": "merged"
+    },
+    {
+      "key": "HRZ-402",
+      "summary": "Implement user onboarding wizard - step 2 (preferences)",
+      "type": "Story",
+      "status": "In Progress",
+      "assignee": "Alex Chen",
+      "priority": "High",
+      "story_points": 5,
+      "days_in_current_status": 2,
+      "last_updated": "2026-03-11",
+      "labels": [],
+      "linked_issues": [
+        { "type": "is blocked by", "key": "HRZ-410", "status": "In Progress" }
+      ],
+      "pr_status": "draft"
+    },
+    {
+      "key": "HRZ-403",
+      "summary": "Payment processing timeout on high-value transactions",
+      "type": "Bug",
+      "status": "Blocked",
+      "assignee": "Maria Santos",
+      "priority": "Critical",
+      "story_points": 8,
+      "days_in_current_status": 4,
+      "last_updated": "2026-03-09",
+      "labels": ["impediment"],
+      "linked_issues": [
+        { "type": "is blocked by", "key": "PLAT-892", "status": "To Do", "team": "Platform" }
+      ],
+      "pr_status": "none"
+    },
+    {
+      "key": "HRZ-404",
+      "summary": "Add analytics tracking to onboarding flow",
+      "type": "Task",
+      "status": "To Do",
+      "assignee": "James Wilson",
+      "priority": "Medium",
+      "story_points": 3,
+      "days_in_current_status": 4,
+      "last_updated": "2026-03-09",
+      "labels": [],
+      "linked_issues": [],
+      "pr_status": "none"
+    },
+    {
+      "key": "HRZ-405",
+      "summary": "Refactor notification service for multi-channel support",
+      "type": "Story",
+      "status": "In Review",
+      "assignee": "James Wilson",
+      "priority": "High",
+      "story_points": 8,
+      "days_in_current_status": 5,
+      "last_updated": "2026-03-08",
+      "labels": [],
+      "linked_issues": [],
+      "pr_status": "open"
+    },
+    {
+      "key": "HRZ-406",
+      "summary": "Fix currency rounding error in invoice generation",
+      "type": "Bug",
+      "status": "In Progress",
+      "assignee": "Priya Patel",
+      "priority": "Critical",
+      "story_points": 3,
+      "days_in_current_status": 6,
+      "last_updated": "2026-03-07",
+      "labels": [],
+      "linked_issues": [],
+      "pr_status": "open"
+    },
+    {
+      "key": "HRZ-407",
+      "summary": "Implement email verification on signup",
+      "type": "Story",
+      "status": "In Progress",
+      "assignee": "Luca Moretti",
+      "priority": "High",
+      "story_points": 5,
+      "days_in_current_status": 3,
+      "last_updated": "2026-03-10",
+      "labels": [],
+      "linked_issues": [],
+      "pr_status": "draft"
+    },
+    {
+      "key": "HRZ-408",
+      "summary": "Write E2E tests for payment flow",
+      "type": "Task",
+      "status": "To Do",
+      "assignee": "Sophie Dubois",
+      "priority": "High",
+      "story_points": 5,
+      "days_in_current_status": 4,
+      "last_updated": "2026-03-09",
+      "labels": [],
+      "linked_issues": [
+        { "type": "is blocked by", "key": "HRZ-403", "status": "Blocked" }
+      ],
+      "pr_status": "none"
+    },
+    {
+      "key": "HRZ-409",
+      "summary": "Update API documentation for v2 endpoints",
+      "type": "Task",
+      "status": "In Progress",
+      "assignee": "Luca Moretti",
+      "priority": "Low",
+      "story_points": 2,
+      "days_in_current_status": 3,
+      "last_updated": "2026-03-10",
+      "labels": [],
+      "linked_issues": [],
+      "pr_status": "none"
+    },
+    {
+      "key": "HRZ-410",
+      "summary": "Design system token migration for onboarding components",
+      "type": "Task",
+      "status": "In Progress",
+      "assignee": "Alex Chen",
+      "priority": "Medium",
+      "story_points": 3,
+      "days_in_current_status": 4,
+      "last_updated": "2026-03-09",
+      "labels": [],
+      "linked_issues": [
+        { "type": "blocks", "key": "HRZ-402", "status": "In Progress" }
+      ],
+      "pr_status": "open"
+    },
+    {
+      "key": "HRZ-411",
+      "summary": "Implement dark mode toggle in user settings",
+      "type": "Story",
+      "status": "Done",
+      "assignee": "Priya Patel",
+      "priority": "Medium",
+      "story_points": 3,
+      "days_in_current_status": 2,
+      "last_updated": "2026-03-11",
+      "labels": [],
+      "linked_issues": [],
+      "pr_status": "merged"
+    },
+    {
+      "key": "HRZ-412",
+      "summary": "Migrate legacy user preferences to new schema",
+      "type": "Task",
+      "status": "Done",
+      "assignee": "Maria Santos",
+      "priority": "Medium",
+      "story_points": 3,
+      "days_in_current_status": 3,
+      "last_updated": "2026-03-10",
+      "labels": [],
+      "linked_issues": [],
+      "pr_status": "merged"
+    },
+    {
+      "key": "HRZ-413",
+      "summary": "SSO integration with enterprise identity provider",
+      "type": "Story",
+      "status": "In Progress",
+      "assignee": "Maria Santos",
+      "priority": "High",
+      "story_points": 8,
+      "days_in_current_status": 1,
+      "last_updated": "2026-03-12",
+      "labels": [],
+      "linked_issues": [],
+      "pr_status": "draft"
+    },
+    {
+      "key": "HRZ-414",
+      "summary": "Performance regression in dashboard load time",
+      "type": "Bug",
+      "status": "In Review",
+      "assignee": "James Wilson",
+      "priority": "High",
+      "story_points": 5,
+      "days_in_current_status": 1,
+      "last_updated": "2026-03-12",
+      "labels": [],
+      "linked_issues": [],
+      "pr_status": "approved"
+    },
+    {
+      "key": "HRZ-415",
+      "summary": "Add rate limiting to public API endpoints",
+      "type": "Story",
+      "status": "To Do",
+      "assignee": null,
+      "priority": "Medium",
+      "story_points": 5,
+      "days_in_current_status": 4,
+      "last_updated": "2026-03-09",
+      "labels": [],
+      "linked_issues": [],
+      "pr_status": "none"
+    }
+  ],
+  "velocity_history": [
+    { "sprint": "Sprint 26.1-3", "committed": 55, "completed": 42 },
+    { "sprint": "Sprint 26.2-1", "committed": 50, "completed": 47 },
+    { "sprint": "Sprint 26.2-2", "committed": 71, "completed": null }
+  ]
+}

@@ -1,0 +1,45 @@
+---
+description: Output formatting, guardrails, and quality standards for delivery management outputs.
+alwaysApply: true
+---
+
+# Output Standards
+
+## Report Structure
+
+Every delivery management output should include:
+
+1. **Header**: Report type, date, sprint/PI context
+2. **RAG status** (where applicable): Green/Amber/Red with one-line justification
+3. **Body**: Structured sections per the skill's output format
+4. **Recommendations**: Top 2-3 specific, actionable recommendations with owners
+5. **Confidence**: High/Medium/Low with justification
+
+## Guardrails
+
+### Quality
+- Every number must have a source (ticket key, computation, or "(estimated)" marker)
+- Every recommendation must reference a specific ticket, person, or deadline
+- No empty sections — use "Data unavailable: {reason}" if data is missing
+
+### Safety
+- Never include personal emails, phone numbers, salary data, or credentials
+- Never fabricate ticket keys, names, dates, or metrics
+- Flag stale data explicitly
+- Mark uncertain claims with "(unverified)" or qualification
+
+### Resilience
+- If a data source is unavailable: produce partial output with caveat, never fail silently
+- Max 2 retry iterations on evaluation failure, then deliver with caveats
+- Always prefer partial output with caveats over no output
+
+## Audience Adaptation
+
+Default audience: Engineering Management. Use the `format-for-audience` skill to adapt for other audiences.
+
+| Audience | Tone | Length | Focus |
+|----------|------|--------|-------|
+| C-Level / VP | Executive, metrics-first | 3-5 bullets | RAG, business impact, decisions needed |
+| Product | Feature-oriented | Per-feature status | Completion, dates, scope changes |
+| Engineering Management | Detailed operational | Full report | Velocity, capacity, blockers, risks |
+| Engineering Team | Direct, actionable | Brief | Sprint status, priority tickets, who needs help |

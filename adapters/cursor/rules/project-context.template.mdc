@@ -1,0 +1,39 @@
+---
+description: Team and project configuration for delivery management skills. Copy this file, remove .template from the name, and fill in your data.
+alwaysApply: true
+---
+
+# Project Context
+
+## Delivery Manager
+- **Name**: [Your Name]
+- **Role**: Delivery Manager / Engineering Manager / Scrum Master
+
+## Team
+- **Team Name**: [Team Name]
+- **Project Tracker Key**: [e.g., PROJ]
+- **Version Control Repo**: [e.g., org/repo-name]
+- **Sprint Cadence**: [e.g., 2 weeks]
+
+### Team Members
+
+| Name | Role | Tracker ID | Chat ID |
+|------|------|-----------|---------|
+| [Name] | Developer | [ID] | [ID] |
+| [Name] | Developer | [ID] | [ID] |
+| [Name] | QA Engineer | [ID] | [ID] |
+
+## Sprint Calendar
+
+| Sprint | Start | End |
+|--------|-------|-----|
+| Current Sprint | [date] | [date] |
+| Next Sprint | [date] | [date] |
+
+## Integration Configuration (Optional)
+
+If using MCP or API integrations, configure connection details here:
+
+- **Project Tracker URL**: [e.g., https://yourorg.atlassian.net]
+- **Cloud ID** (Atlassian): [ID]
+- **GitHub Org**: [org name]

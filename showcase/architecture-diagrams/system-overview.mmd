@@ -1,0 +1,48 @@
+graph TB
+    subgraph userLayer [User Layer]
+        DM["Delivery Manager"]
+    end
+
+    subgraph toolLayer [AI Tool Layer]
+        Cursor["Cursor"]
+        ClaudeCode["Claude Code"]
+        Codex["Codex / Other"]
+    end
+
+    subgraph adapterLayer [Adapter Layer]
+        CursorAdapter["Cursor Adapter<br/>rules + agents + skills"]
+        ClaudeAdapter["Claude Code Adapter<br/>CLAUDE.md + skills"]
+        GenericAdapter["Manual<br/>copy SKILL.md into context"]
+    end
+
+    subgraph coreLayer [Core Library]
+        direction TB
+        Skills["15 Skills<br/>sprint-ops, risk, reporting,<br/>planning, communication,<br/>quality gates"]
+        Workflows["3 Workflows<br/>morning-scan,<br/>sprint-close-report,<br/>pi-readiness-review"]
+        Patterns["5 Patterns<br/>orchestrator, verifier,<br/>confidence, degradation,<br/>human-approval"]
+        QualityGates["Quality Gates<br/>self-check (5 checks)<br/>evaluate-output (6 dims)"]
+    end
+
+    subgraph dataLayer [Data Layer]
+        MockData["Mock Data<br/>sprint-data.json<br/>team-roster.json"]
+        LiveData["Live Integrations<br/>Jira, GitHub, Slack<br/>(v2 planned)"]
+    end
+
+    DM --> Cursor
+    DM --> ClaudeCode
+    DM --> Codex
+
+    Cursor --> CursorAdapter
+    ClaudeCode --> ClaudeAdapter
+    Codex --> GenericAdapter
+
+    CursorAdapter --> Skills
+    ClaudeAdapter --> Skills
+    GenericAdapter --> Skills
+
+    Skills --> Workflows
+    Workflows --> QualityGates
+    Skills --> QualityGates
+
+    Skills -.-> MockData
+    Skills -.-> LiveData

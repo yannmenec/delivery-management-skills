@@ -1,0 +1,94 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Delivery Management Skill",
+  "description": "Schema for skill metadata frontmatter in SKILL.md files",
+  "type": "object",
+  "required": ["name", "version", "description", "category", "autonomy", "portability", "complexity", "type", "inputs", "outputs"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]+$",
+      "description": "Kebab-case skill identifier"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "Semantic version (major.minor.patch)"
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 200,
+      "description": "One-line description of what the skill does and when to use it"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "sprint-operations",
+        "risk-management",
+        "reporting",
+        "planning",
+        "quality-gates",
+        "communication",
+        "enrichment"
+      ]
+    },
+    "trigger": {
+      "type": "string",
+      "description": "When this skill should be invoked"
+    },
+    "autonomy": {
+      "type": "string",
+      "enum": ["autonomous", "supervised", "human-in-the-loop"],
+      "description": "autonomous: no approval needed. supervised: human reviews output. human-in-the-loop: human approves before any action."
+    },
+    "portability": {
+      "type": "string",
+      "enum": ["universal", "requires-integration"],
+      "description": "universal: works with manually provided data. requires-integration: needs a live data source."
+    },
+    "complexity": {
+      "type": "string",
+      "enum": ["basic", "intermediate", "advanced"]
+    },
+    "type": {
+      "type": "string",
+      "enum": ["detection", "computation", "generation", "evaluation", "enrichment", "workflow"]
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "type", "required", "description"],
+        "properties": {
+          "name": { "type": "string" },
+          "type": { "type": "string", "enum": ["structured-text", "number", "text", "boolean", "list", "json"] },
+          "required": { "type": "boolean" },
+          "default": {},
+          "description": { "type": "string" }
+        }
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "type", "description"],
+        "properties": {
+          "name": { "type": "string" },
+          "type": { "type": "string" },
+          "description": { "type": "string" }
+        }
+      }
+    },
+    "tools_optional": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Optional integrations that enhance this skill (e.g. jira, github, slack)"
+    },
+    "model_compatibility": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "LLM families this skill has been tested with"
+    }
+  }
+}

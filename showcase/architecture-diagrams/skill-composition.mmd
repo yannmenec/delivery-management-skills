@@ -1,0 +1,13 @@
+graph LR
+    subgraph morningWorkflow [Morning Scan Workflow]
+        Input["Sprint Data"] --> P["PARALLEL"]
+        P --> DST["detect-stuck-tickets"]
+        P --> DGD["detect-ghost-done"]
+        P --> DSC["detect-scope-change"]
+        DST --> Merge["Prioritize & Merge"]
+        DGD --> Merge
+        DSC --> Merge
+        Merge --> FFA["format-for-audience"]
+        FFA --> SC["self-check"]
+        SC --> Output["Morning Briefing"]
+    end

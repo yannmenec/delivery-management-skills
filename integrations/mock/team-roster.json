@@ -1,0 +1,66 @@
+{
+  "team": {
+    "name": "Horizon",
+    "project_key": "HRZ",
+    "github_repo": "horizon-org/horizon-app",
+    "sprint_cadence_weeks": 2
+  },
+  "members": [
+    {
+      "name": "Alex Chen",
+      "role": "Senior Developer",
+      "allocation_percentage": 100,
+      "tracker_id": "user-001",
+      "chat_id": "U001ALEX"
+    },
+    {
+      "name": "Maria Santos",
+      "role": "Developer",
+      "allocation_percentage": 100,
+      "tracker_id": "user-002",
+      "chat_id": "U002MARIA"
+    },
+    {
+      "name": "James Wilson",
+      "role": "Developer",
+      "allocation_percentage": 100,
+      "tracker_id": "user-003",
+      "chat_id": "U003JAMES"
+    },
+    {
+      "name": "Priya Patel",
+      "role": "Developer",
+      "allocation_percentage": 100,
+      "tracker_id": "user-004",
+      "chat_id": "U004PRIYA"
+    },
+    {
+      "name": "Luca Moretti",
+      "role": "Developer",
+      "allocation_percentage": 80,
+      "tracker_id": "user-005",
+      "chat_id": "U005LUCA"
+    },
+    {
+      "name": "Sophie Dubois",
+      "role": "QA Engineer",
+      "allocation_percentage": 100,
+      "tracker_id": "user-006",
+      "chat_id": "U006SOPHIE"
+    }
+  ],
+  "pto_schedule": [
+    {
+      "person": "Luca Moretti",
+      "dates": ["2026-03-16", "2026-03-17"],
+      "days": 2,
+      "reason": "Personal"
+    },
+    {
+      "person": "Sophie Dubois",
+      "dates": ["2026-03-20"],
+      "days": 1,
+      "reason": "Medical"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+---
+description: Controls agent autonomy for delivery management operations.
+alwaysApply: true
+---
+
+# Autonomy Level
+
+## Current Mode: SUPERVISED
+
+The delivery agent generates all outputs automatically. Write actions (posting comments, sending messages, updating tickets) require your explicit approval before execution.
+
+## Autonomy Levels
+
+| Level | Reports | Write Actions |
+|-------|---------|---------------|
+| **human-in-the-loop** | Manual trigger, manual review | Blocked |
+| **supervised** (default) | Auto-generated | You approve each one |
+| **autonomous** | Auto-generated | Auto-executed |
+
+## Confidence Thresholds
+
+| Level | Criteria | Behavior |
+|-------|----------|----------|
+| **High** | >90% required data available | Proceed normally |
+| **Medium** | 70-90% data available | Proceed with "Medium confidence" caveat |
+| **Low** | <70% data available | Block write actions, suggest manual verification |
+
+## Tool Risk Classification
+
+**Safe (auto-approvable)**: Read operations — searching tickets, querying data, fetching pages.
+
+**Gated (require approval)**: Write operations — posting comments, sending messages, transitioning tickets, creating tickets.
+
+When in doubt, show the output and wait for approval. Never execute a write action silently.
