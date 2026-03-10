@@ -12,15 +12,20 @@ echo "Installing Delivery Management Skills for Claude Code into: $WORKSPACE"
 echo "Source: $REPO_ROOT"
 echo ""
 
-if [ -f "$WORKSPACE/CLAUDE.md" ]; then
-    echo "WARNING: CLAUDE.md already exists at $WORKSPACE/CLAUDE.md"
-    echo "The delivery skills instructions will be appended to the existing file."
-    echo ""
-    echo "---" >> "$WORKSPACE/CLAUDE.md"
+MARKER="# --- agentic-delivery ---"
+
+if [ -f "$WORKSPACE/CLAUDE.md" ] && grep -q "$MARKER" "$WORKSPACE/CLAUDE.md"; then
+    echo "Delivery skills already present in CLAUDE.md — skipping (idempotent)."
+elif [ -f "$WORKSPACE/CLAUDE.md" ]; then
+    echo "Appending delivery skills instructions to existing CLAUDE.md."
+    echo "" >> "$WORKSPACE/CLAUDE.md"
+    echo "$MARKER" >> "$WORKSPACE/CLAUDE.md"
     echo "" >> "$WORKSPACE/CLAUDE.md"
     cat "$SCRIPT_DIR/CLAUDE.md" >> "$WORKSPACE/CLAUDE.md"
 else
-    cp "$SCRIPT_DIR/CLAUDE.md" "$WORKSPACE/CLAUDE.md"
+    echo "$MARKER" > "$WORKSPACE/CLAUDE.md"
+    echo "" >> "$WORKSPACE/CLAUDE.md"
+    cat "$SCRIPT_DIR/CLAUDE.md" >> "$WORKSPACE/CLAUDE.md"
 fi
 
 mkdir -p "$WORKSPACE/delivery-skills"
@@ -56,7 +61,13 @@ for workflow_file in "$REPO_ROOT/workflows/"*.md; do
     ln -s "$workflow_file" "$target"
 done
 
-echo "Installed $SKILL_COUNT skills + workflows"
+if [ -d "$REPO_ROOT/integrations/mock" ]; then
+    target="$WORKSPACE/delivery-skills/mock"
+    if [ -L "$target" ]; then rm "$target"; fi
+    ln -s "$REPO_ROOT/integrations/mock" "$target"
+fi
+
+echo "Installed $SKILL_COUNT skills + workflows + mock data"
 echo "CLAUDE.md configured at $WORKSPACE/CLAUDE.md"
 echo ""
 echo "Start using: claude 'What is stuck in our sprint?'"

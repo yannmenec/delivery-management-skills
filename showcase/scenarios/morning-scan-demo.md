@@ -18,7 +18,7 @@ Read workflows/morning-scan.md and run it against the data in integrations/mock/
 
 **In Claude Code:**
 ```
-Read delivery-skills/workflows/morning-scan.md and run it against delivery-skills/mock/sprint-data.json
+Read delivery-skills/workflows/morning-scan.md and run it against integrations/mock/sprint-data.json
 ```
 
 **Manual (any tool):**

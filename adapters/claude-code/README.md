@@ -38,3 +38,13 @@ Claude Code supports MCP servers for live data. Configure in your Claude Code se
 ## Customization
 
 Edit the `CLAUDE.md` file to add your team context (team name, members, sprint calendar, project keys).
+
+## Smoke Test
+
+After installing, verify everything works:
+
+- [ ] `ls delivery-skills/` shows category directories (sprint-operations, reporting, etc.)
+- [ ] `ls delivery-skills/workflows/` shows workflow files
+- [ ] `ls delivery-skills/mock/` shows sprint-data.json and team-roster.json
+- [ ] `CLAUDE.md` contains the delivery skills instructions
+- [ ] In Claude Code: "Read `delivery-skills/sprint-operations/detect-stuck-tickets/SKILL.md` and summarize it" returns a coherent summary

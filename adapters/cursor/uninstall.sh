@@ -8,62 +8,35 @@ REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 WORKSPACE="${1:-.}"
 WORKSPACE="$(cd "$WORKSPACE" && pwd)"
 
-echo "Installing Delivery Management Skills into: $WORKSPACE"
-echo "Source: $REPO_ROOT"
-echo ""
+echo "Uninstalling Delivery Management Skills from: $WORKSPACE"
 
-mkdir -p "$WORKSPACE/.cursor/skills"
-mkdir -p "$WORKSPACE/.cursor/rules"
-mkdir -p "$WORKSPACE/.cursor/agents"
-
-SKILL_COUNT=0
+REMOVED=0
 for category_dir in "$REPO_ROOT/skills"/*/; do
     category="$(basename "$category_dir")"
     [ "$category" = "_schema" ] && continue
-
     for skill_dir in "$category_dir"*/; do
         skill="$(basename "$skill_dir")"
         target="$WORKSPACE/.cursor/skills/$skill"
-
-        if [ -L "$target" ]; then
-            rm "$target"
-        elif [ -d "$target" ]; then
-            echo "  SKIP: $target already exists (not a symlink). Remove manually to update."
-            continue
-        fi
-
-        ln -s "$skill_dir" "$target"
-        SKILL_COUNT=$((SKILL_COUNT + 1))
+        if [ -L "$target" ]; then rm "$target"; REMOVED=$((REMOVED + 1)); fi
     done
 done
 
 for rule_file in "$SCRIPT_DIR/rules/"*.mdc; do
     [ -f "$rule_file" ] || continue
     target="$WORKSPACE/.cursor/rules/$(basename "$rule_file")"
-    if [ -L "$target" ]; then
-        rm "$target"
-    fi
-    ln -s "$rule_file" "$target"
+    if [ -L "$target" ]; then rm "$target"; fi
 done
 
 for agent_file in "$SCRIPT_DIR/agents/"*.md; do
     [ -f "$agent_file" ] || continue
     target="$WORKSPACE/.cursor/agents/$(basename "$agent_file")"
-    if [ -L "$target" ]; then
-        rm "$target"
-    fi
-    ln -s "$agent_file" "$target"
+    if [ -L "$target" ]; then rm "$target"; fi
 done
 
-mkdir -p "$WORKSPACE/.cursor/workflows"
-WF_COUNT=0
 for wf_file in "$REPO_ROOT/workflows/"*.md; do
     [ -f "$wf_file" ] || continue
     target="$WORKSPACE/.cursor/workflows/$(basename "$wf_file")"
     if [ -L "$target" ]; then rm "$target"; fi
-    ln -s "$wf_file" "$target"
-    WF_COUNT=$((WF_COUNT + 1))
 done
 
-echo "Installed $SKILL_COUNT skills + $WF_COUNT workflows"
-echo "Reload Cursor (Cmd+Shift+P / Ctrl+Shift+P > 'Reload Window') to pick up changes."
+echo "Removed $REMOVED skill symlinks and associated rules, agents, and workflows."

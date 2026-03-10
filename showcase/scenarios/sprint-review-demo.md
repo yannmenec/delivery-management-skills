@@ -16,7 +16,7 @@ Read workflows/sprint-close-report.md and generate a sprint report using integra
 
 **In Claude Code:**
 ```
-Generate a sprint close report using the workflow in delivery-skills/workflows/sprint-close-report.md and data from sprint-data.json
+Generate a sprint close report using the workflow in delivery-skills/workflows/sprint-close-report.md and data from integrations/mock/sprint-data.json
 ```
 
 ## Expected Output (Summary)
