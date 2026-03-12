@@ -1,0 +1,83 @@
+[
+  {
+    "channel": "#mercury-team",
+    "author": "sarah.chen",
+    "timestamp": "2026-03-04T14:30:00Z",
+    "text": "Decision: We'll use the new gateway SDK v3 directly instead of wrapping v2. The v3 SDK has native webhook support which eliminates the need for our custom webhook adapter. This increases MERC-220 scope slightly but saves us MERC-232 rework later.",
+    "reactions": ["\ud83d\udc4d", "\ud83d\udc4d", "\ud83d\udc4d", "\ud83d\udc4d", "\u2705"],
+    "thread_replies": 6,
+    "tags": ["#decision", "payment-gateway", "sdk"]
+  },
+  {
+    "channel": "#mercury-team",
+    "author": "tom.mueller",
+    "timestamp": "2026-03-06T11:00:00Z",
+    "text": "Decision: Batch processor (MERC-234) will use async message queue instead of synchronous processing. This adds complexity but we need it to handle the 10k+ daily transaction volume the client mentioned. Marcus is picking this up.",
+    "reactions": ["\ud83d\udc4d", "\ud83d\udc4d", "\u2705"],
+    "thread_replies": 4,
+    "tags": ["#decision", "architecture", "batch-processing"]
+  },
+  {
+    "channel": "#mercury-team",
+    "author": "priya.sharma",
+    "timestamp": "2026-03-10T09:15:00Z",
+    "text": "Heads up: client called yesterday asking about multi-currency support. Product agreed to add it to Sprint 42. Created MERC-237 (Add currency conversion support, 5 SP). This wasn't in the original sprint plan \u2014 we're now at 78 SP committed vs our 35 SP velocity.",
+    "reactions": ["\ud83d\ude2c", "\ud83d\ude2c", "\ud83d\udc40"],
+    "thread_replies": 8,
+    "tags": ["#scope-change", "currency", "sprint-42"]
+  },
+  {
+    "channel": "#mercury-team",
+    "author": "kenji.tanaka",
+    "timestamp": "2026-03-10T15:00:00Z",
+    "text": "FYI: PCI compliance audit is next week. We added MERC-227 (PCI compliance headers) to Sprint 42 mid-flight. Tom is handling it. Marking as urgent since the auditor needs to see these headers in staging by Wednesday.",
+    "reactions": ["\ud83d\udea8", "\ud83d\udc4d", "\ud83d\udc4d"],
+    "thread_replies": 3,
+    "tags": ["#scope-change", "compliance", "pci"]
+  },
+  {
+    "channel": "#mercury-team",
+    "author": "sarah.chen",
+    "timestamp": "2026-03-11T10:30:00Z",
+    "text": "Blocker: The external fraud detection API vendor (FraudShield) pushed back their sandbox availability to March 24. MERC-229 is fully blocked \u2014 I can't even start the integration. Moving my focus to MERC-230 (webhook migration) instead.",
+    "reactions": ["\ud83d\ude15", "\ud83d\ude15", "\ud83d\udea9"],
+    "thread_replies": 5,
+    "tags": ["#blocker", "fraud-detection", "external-dependency"]
+  },
+  {
+    "channel": "#mercury-team",
+    "author": "lea.dubois",
+    "timestamp": "2026-03-11T14:00:00Z",
+    "text": "Raising a concern: Marcus currently has 7 tickets assigned in Sprint 42, including 3 marked Done that I can't find any PRs for (MERC-221, MERC-224). Can we redistribute some of his In Progress work? The error handling refactor (MERC-226) has been sitting with no review for 3 days.",
+    "reactions": ["\ud83d\udc4d", "\ud83d\udc4d", "\ud83d\udc4d", "\ud83d\udc4d"],
+    "thread_replies": 7,
+    "tags": ["#workload", "capacity", "review-bottleneck"]
+  },
+  {
+    "channel": "#mercury-team",
+    "author": "priya.sharma",
+    "timestamp": "2026-03-11T16:45:00Z",
+    "text": "Client demo feedback from this morning: they love the reconciliation dashboard (MERC-231) direction but want the discrepancy view to highlight amounts > $1000 in red. Minor UI tweak, I'll fold it into the current PR.",
+    "reactions": ["\ud83d\udc4d", "\u2705"],
+    "thread_replies": 2,
+    "tags": ["#client-feedback", "reconciliation", "ui"]
+  },
+  {
+    "channel": "#mercury-team",
+    "author": "kenji.tanaka",
+    "timestamp": "2026-03-12T09:00:00Z",
+    "text": "Reminder: I'm out Friday (March 13) for a personal appointment. MERC-235 (monitoring alerts) is blocked by MERC-230 anyway, so no impact. I'll finish the audit logging PR (#147) today before EOD.",
+    "reactions": ["\ud83d\udc4d"],
+    "thread_replies": 1,
+    "tags": ["#pto", "schedule"]
+  },
+  {
+    "channel": "#mercury-team",
+    "author": "tom.mueller",
+    "timestamp": "2026-03-12T10:30:00Z",
+    "text": "Shoutout to Sarah \u2014 the gateway SDK v3 integration (MERC-220) merged clean with 88% coverage. Solid foundation for the rest of the migration work. \ud83c\udf89",
+    "reactions": ["\ud83c\udf89", "\ud83c\udf89", "\ud83d\udc4f", "\ud83d\udc4f", "\ud83d\udcaa"],
+    "thread_replies": 3,
+    "tags": ["#celebration", "gateway-sdk"]
+  }
+]

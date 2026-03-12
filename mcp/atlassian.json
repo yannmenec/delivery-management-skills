@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "atlassian": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@anthropic/atlassian-mcp@latest",
+        "--atlassian-site-url", "https://YOUR_ATLASSIAN_SITE.atlassian.net",
+        "--atlassian-user-email", "YOUR_EMAIL@example.com",
+        "--atlassian-api-token", "YOUR_ATLASSIAN_API_TOKEN"
+      ],
+      "description": "Atlassian MCP server for Jira and Confluence access"
+    }
+  }
+}

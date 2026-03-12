@@ -1,0 +1,312 @@
+[
+  {
+    "id": "build-4501",
+    "branch": "refactor/MERC-226-error-handling",
+    "status": "success",
+    "triggered_at": "2026-03-07T16:10:00Z",
+    "duration_seconds": 198,
+    "pr_number": 141,
+    "failed_tests": [],
+    "coverage_percent": 81.4
+  },
+  {
+    "id": "build-4502",
+    "branch": "refactor/MERC-226-error-handling",
+    "status": "success",
+    "triggered_at": "2026-03-08T11:40:00Z",
+    "duration_seconds": 205,
+    "pr_number": 141,
+    "failed_tests": [],
+    "coverage_percent": 82.1
+  },
+  {
+    "id": "build-4503",
+    "branch": "feat/MERC-233-settlement-reports",
+    "status": "success",
+    "triggered_at": "2026-03-08T14:15:00Z",
+    "duration_seconds": 187,
+    "pr_number": 145,
+    "failed_tests": [],
+    "coverage_percent": 79.3
+  },
+  {
+    "id": "build-4504",
+    "branch": "feat/MERC-233-settlement-reports",
+    "status": "success",
+    "triggered_at": "2026-03-09T10:15:00Z",
+    "duration_seconds": 194,
+    "pr_number": 145,
+    "failed_tests": [],
+    "coverage_percent": 80.1
+  },
+  {
+    "id": "build-4505",
+    "branch": "chore/MERC-223-email-template",
+    "status": "success",
+    "triggered_at": "2026-03-10T09:40:00Z",
+    "duration_seconds": 142,
+    "pr_number": 146,
+    "failed_tests": [],
+    "coverage_percent": 84.7
+  },
+  {
+    "id": "build-4506",
+    "branch": "feat/MERC-220-gateway-sdk-v3",
+    "status": "success",
+    "triggered_at": "2026-03-10T10:15:00Z",
+    "duration_seconds": 234,
+    "pr_number": 143,
+    "failed_tests": [],
+    "coverage_percent": 86.2
+  },
+  {
+    "id": "build-4507",
+    "branch": "feat/MERC-228-payment-webhook",
+    "status": "success",
+    "triggered_at": "2026-03-10T09:15:00Z",
+    "duration_seconds": 218,
+    "pr_number": 153,
+    "failed_tests": [],
+    "coverage_percent": 83.5
+  },
+  {
+    "id": "build-4508",
+    "branch": "fix/MERC-222-retry-logic",
+    "status": "success",
+    "triggered_at": "2026-03-10T11:15:00Z",
+    "duration_seconds": 176,
+    "pr_number": 144,
+    "failed_tests": [],
+    "coverage_percent": 87.9
+  },
+  {
+    "id": "build-4509",
+    "branch": "feat/MERC-234-batch-processor",
+    "status": "success",
+    "triggered_at": "2026-03-10T14:15:00Z",
+    "duration_seconds": 312,
+    "pr_number": 150,
+    "failed_tests": [],
+    "coverage_percent": 78.3
+  },
+  {
+    "id": "build-4510",
+    "branch": "feat/MERC-231-reconciliation-dashboard",
+    "status": "success",
+    "triggered_at": "2026-03-10T11:15:00Z",
+    "duration_seconds": 256,
+    "pr_number": 149,
+    "failed_tests": [],
+    "coverage_percent": 82.3
+  },
+  {
+    "id": "build-4511",
+    "branch": "feat/MERC-220-gateway-sdk-v3",
+    "status": "success",
+    "triggered_at": "2026-03-10T15:15:00Z",
+    "duration_seconds": 241,
+    "pr_number": 143,
+    "failed_tests": [],
+    "coverage_percent": 87.1
+  },
+  {
+    "id": "build-4512",
+    "branch": "feat/MERC-228-payment-webhook",
+    "status": "success",
+    "triggered_at": "2026-03-10T14:45:00Z",
+    "duration_seconds": 223,
+    "pr_number": 153,
+    "failed_tests": [],
+    "coverage_percent": 84.2
+  },
+  {
+    "id": "build-4513",
+    "branch": "feat/MERC-230-webhook-migration",
+    "status": "success",
+    "triggered_at": "2026-03-11T09:25:00Z",
+    "duration_seconds": 245,
+    "pr_number": 148,
+    "failed_tests": [],
+    "coverage_percent": 85.6
+  },
+  {
+    "id": "build-4514",
+    "branch": "feat/MERC-232-payment-validation",
+    "status": "success",
+    "triggered_at": "2026-03-11T10:15:00Z",
+    "duration_seconds": 189,
+    "pr_number": 152,
+    "failed_tests": [],
+    "coverage_percent": 88.4
+  },
+  {
+    "id": "build-4515",
+    "branch": "feat/MERC-234-batch-processor",
+    "status": "failure",
+    "triggered_at": "2026-03-11T10:45:00Z",
+    "duration_seconds": 298,
+    "pr_number": 150,
+    "failed_tests": ["test_batch_size_validation", "test_concurrent_batch_processing"],
+    "coverage_percent": 75.2
+  },
+  {
+    "id": "build-4516",
+    "branch": "feat/MERC-225-audit-logging",
+    "status": "success",
+    "triggered_at": "2026-03-11T11:15:00Z",
+    "duration_seconds": 201,
+    "pr_number": 147,
+    "failed_tests": [],
+    "coverage_percent": 86.8
+  },
+  {
+    "id": "build-4517",
+    "branch": "feat/MERC-220-gateway-sdk-v3",
+    "status": "success",
+    "triggered_at": "2026-03-11T10:15:00Z",
+    "duration_seconds": 238,
+    "pr_number": 143,
+    "failed_tests": [],
+    "coverage_percent": 88.3
+  },
+  {
+    "id": "build-4518",
+    "branch": "fix/MERC-222-retry-logic",
+    "status": "success",
+    "triggered_at": "2026-03-11T09:45:00Z",
+    "duration_seconds": 181,
+    "pr_number": 144,
+    "failed_tests": [],
+    "coverage_percent": 89.1
+  },
+  {
+    "id": "build-4519",
+    "branch": "feat/MERC-231-reconciliation-dashboard",
+    "status": "success",
+    "triggered_at": "2026-03-11T09:55:00Z",
+    "duration_seconds": 267,
+    "pr_number": 149,
+    "failed_tests": [],
+    "coverage_percent": 83.7
+  },
+  {
+    "id": "build-4520",
+    "branch": "feat/MERC-234-batch-processor",
+    "status": "failure",
+    "triggered_at": "2026-03-11T15:15:00Z",
+    "duration_seconds": 305,
+    "pr_number": 150,
+    "failed_tests": ["test_batch_size_validation", "test_concurrent_batch_processing", "test_batch_error_recovery"],
+    "coverage_percent": 74.5
+  },
+  {
+    "id": "build-4521",
+    "branch": "feat/MERC-230-webhook-migration",
+    "status": "success",
+    "triggered_at": "2026-03-11T14:45:00Z",
+    "duration_seconds": 251,
+    "pr_number": 148,
+    "failed_tests": [],
+    "coverage_percent": 86.1
+  },
+  {
+    "id": "build-4522",
+    "branch": "feat/MERC-228-payment-webhook",
+    "status": "success",
+    "triggered_at": "2026-03-11T09:15:00Z",
+    "duration_seconds": 227,
+    "pr_number": 153,
+    "failed_tests": [],
+    "coverage_percent": 85.0
+  },
+  {
+    "id": "build-4523",
+    "branch": "feat/MERC-225-audit-logging",
+    "status": "success",
+    "triggered_at": "2026-03-11T16:15:00Z",
+    "duration_seconds": 209,
+    "pr_number": 147,
+    "failed_tests": [],
+    "coverage_percent": 87.4
+  },
+  {
+    "id": "build-4524",
+    "branch": "feat/MERC-231-reconciliation-dashboard",
+    "status": "success",
+    "triggered_at": "2026-03-11T16:30:00Z",
+    "duration_seconds": 274,
+    "pr_number": 149,
+    "failed_tests": [],
+    "coverage_percent": 84.1
+  },
+  {
+    "id": "build-4525",
+    "branch": "feat/MERC-225-audit-logging",
+    "status": "success",
+    "triggered_at": "2026-03-12T09:15:00Z",
+    "duration_seconds": 213,
+    "pr_number": 147,
+    "failed_tests": [],
+    "coverage_percent": 88.2
+  },
+  {
+    "id": "build-4526",
+    "branch": "feat/MERC-232-payment-validation",
+    "status": "success",
+    "triggered_at": "2026-03-12T09:15:00Z",
+    "duration_seconds": 195,
+    "pr_number": 152,
+    "failed_tests": [],
+    "coverage_percent": 89.6
+  },
+  {
+    "id": "build-4527",
+    "branch": "feat/MERC-234-batch-processor",
+    "status": "failure",
+    "triggered_at": "2026-03-12T10:00:00Z",
+    "duration_seconds": 289,
+    "pr_number": 150,
+    "failed_tests": ["test_batch_size_validation", "test_concurrent_batch_processing", "test_batch_error_recovery"],
+    "coverage_percent": 75.0
+  },
+  {
+    "id": "build-4528",
+    "branch": "feat/MERC-230-webhook-migration",
+    "status": "success",
+    "triggered_at": "2026-03-12T10:30:00Z",
+    "duration_seconds": 248,
+    "pr_number": 148,
+    "failed_tests": [],
+    "coverage_percent": 86.5
+  },
+  {
+    "id": "build-4529",
+    "branch": "feat/MERC-231-reconciliation-dashboard",
+    "status": "success",
+    "triggered_at": "2026-03-12T09:45:00Z",
+    "duration_seconds": 281,
+    "pr_number": 149,
+    "failed_tests": [],
+    "coverage_percent": 85.3
+  },
+  {
+    "id": "build-4530",
+    "branch": "feat/MERC-232-payment-validation",
+    "status": "success",
+    "triggered_at": "2026-03-12T11:45:00Z",
+    "duration_seconds": 192,
+    "pr_number": 152,
+    "failed_tests": [],
+    "coverage_percent": 91.2
+  },
+  {
+    "id": "build-4531",
+    "branch": "feat/MERC-234-batch-processor",
+    "status": "failure",
+    "triggered_at": "2026-03-12T13:15:00Z",
+    "duration_seconds": 301,
+    "pr_number": 150,
+    "failed_tests": ["test_batch_size_validation", "test_concurrent_batch_processing"],
+    "coverage_percent": 74.9
+  }
+]
