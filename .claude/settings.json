@@ -1,4 +1,12 @@
 {
-  "permissions": {},
-  "mcpServers": {}
+  "permissions": {
+    "allow": [
+      "Read(*)",
+      "Write(agents/*/examples/output-*.md)"
+    ],
+    "deny": [
+      "Write(data/*)",
+      "Write(archive/*)"
+    ]
+  }
 }

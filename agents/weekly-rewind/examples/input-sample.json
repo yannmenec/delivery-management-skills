@@ -1,0 +1,233 @@
+{
+  "jira_tickets": [
+    {
+      "key": "MERC-220",
+      "summary": "Implement payment gateway SDK v3 client",
+      "status": "Done",
+      "assignee": "sarah.chen",
+      "story_points": 5,
+      "sprint": "Sprint 42",
+      "created": "2026-03-10",
+      "updated": "2026-03-11",
+      "labels": ["payment", "migration"],
+      "type": "Story",
+      "priority": "High",
+      "linked_prs": ["#143"],
+      "blocked_by": [],
+      "blocks": []
+    },
+    {
+      "key": "MERC-222",
+      "summary": "Add retry logic for failed transactions",
+      "status": "Done",
+      "assignee": "tom.mueller",
+      "story_points": 3,
+      "sprint": "Sprint 42",
+      "created": "2026-03-10",
+      "updated": "2026-03-11",
+      "labels": ["payment", "reliability"],
+      "type": "Story",
+      "priority": "Medium",
+      "linked_prs": ["#144"],
+      "blocked_by": [],
+      "blocks": []
+    },
+    {
+      "key": "MERC-225",
+      "summary": "Add transaction audit logging",
+      "status": "Done",
+      "assignee": "kenji.tanaka",
+      "story_points": 3,
+      "sprint": "Sprint 42",
+      "created": "2026-03-10",
+      "updated": "2026-03-12",
+      "labels": ["payment", "observability"],
+      "type": "Story",
+      "priority": "Medium",
+      "linked_prs": ["#147"],
+      "blocked_by": [],
+      "blocks": []
+    },
+    {
+      "key": "MERC-228",
+      "summary": "Create payment status webhook endpoint",
+      "status": "Done",
+      "assignee": "marcus.johnson",
+      "story_points": 5,
+      "sprint": "Sprint 42",
+      "created": "2026-03-10",
+      "updated": "2026-03-12",
+      "labels": ["payment", "webhooks"],
+      "type": "Story",
+      "priority": "High",
+      "linked_prs": ["#153"],
+      "blocked_by": [],
+      "blocks": []
+    },
+    {
+      "key": "MERC-226",
+      "summary": "Refactor payment error handling",
+      "status": "In Progress",
+      "assignee": "marcus.johnson",
+      "story_points": 3,
+      "sprint": "Sprint 42",
+      "created": "2026-03-07",
+      "updated": "2026-03-08",
+      "labels": ["payment", "tech-debt"],
+      "type": "Story",
+      "priority": "Medium",
+      "linked_prs": ["#141"],
+      "blocked_by": [],
+      "blocks": []
+    },
+    {
+      "key": "MERC-231",
+      "summary": "Build payment reconciliation dashboard",
+      "status": "In Progress",
+      "assignee": "priya.sharma",
+      "story_points": 8,
+      "sprint": "Sprint 42",
+      "created": "2026-03-10",
+      "updated": "2026-03-12",
+      "labels": ["payment", "dashboard"],
+      "type": "Story",
+      "priority": "High",
+      "linked_prs": ["#149"],
+      "blocked_by": [],
+      "blocks": []
+    },
+    {
+      "key": "MERC-229",
+      "summary": "Integrate with external fraud detection API",
+      "status": "Blocked",
+      "assignee": "sarah.chen",
+      "story_points": 5,
+      "sprint": "Sprint 42",
+      "created": "2026-03-10",
+      "updated": "2026-03-11",
+      "labels": ["payment", "fraud-detection"],
+      "type": "Story",
+      "priority": "Critical",
+      "linked_prs": [],
+      "blocked_by": ["EXT-API"],
+      "blocks": ["MERC-238"]
+    },
+    {
+      "key": "MERC-237",
+      "summary": "Add currency conversion support",
+      "status": "To Do",
+      "assignee": "marcus.johnson",
+      "story_points": 5,
+      "sprint": "Sprint 42",
+      "created": "2026-03-11",
+      "updated": "2026-03-11",
+      "labels": ["payment", "i18n"],
+      "type": "Story",
+      "priority": "High",
+      "linked_prs": [],
+      "blocked_by": ["MERC-234"],
+      "blocks": []
+    }
+  ],
+  "slack_decisions": [
+    {
+      "channel": "#mercury-team",
+      "author": "sarah.chen",
+      "timestamp": "2026-03-04T14:30:00Z",
+      "text": "Decision: We'll use the new gateway SDK v3 directly instead of wrapping v2. The v3 SDK has native webhook support which eliminates the need for our custom webhook adapter. This increases MERC-220 scope slightly but saves us MERC-232 rework later.",
+      "reactions": ["👍", "👍", "👍", "👍", "✅"],
+      "thread_replies": 6,
+      "tags": ["#decision", "payment-gateway", "sdk"]
+    },
+    {
+      "channel": "#mercury-team",
+      "author": "priya.sharma",
+      "timestamp": "2026-03-10T09:15:00Z",
+      "text": "Heads up: client called yesterday asking about multi-currency support. Product agreed to add it to Sprint 42. Created MERC-237 (Add currency conversion support, 5 SP). This wasn't in the original sprint plan — we're now at 78 SP committed vs our 35 SP velocity.",
+      "reactions": ["😬", "😬", "👀"],
+      "thread_replies": 8,
+      "tags": ["#scope-change", "currency", "sprint-42"]
+    },
+    {
+      "channel": "#mercury-team",
+      "author": "sarah.chen",
+      "timestamp": "2026-03-11T10:30:00Z",
+      "text": "Blocker: The external fraud detection API vendor (FraudShield) pushed back their sandbox availability to March 24. MERC-229 is fully blocked — I can't even start the integration. Moving my focus to MERC-230 (webhook migration) instead.",
+      "reactions": ["😕", "😕", "🚩"],
+      "thread_replies": 5,
+      "tags": ["#blocker", "fraud-detection", "external-dependency"]
+    }
+  ],
+  "github_prs": [
+    {
+      "number": 143,
+      "title": "feat(payment): implement gateway SDK v3 client",
+      "author": "sarah.chen",
+      "status": "merged",
+      "created_at": "2026-03-10T10:00:00Z",
+      "updated_at": "2026-03-11T17:00:00Z",
+      "merged_at": "2026-03-11T17:00:00Z",
+      "base_branch": "main",
+      "head_branch": "feat/MERC-220-gateway-sdk-v3",
+      "reviews": [
+        {"reviewer": "tom.mueller", "status": "approved", "submitted_at": "2026-03-11T14:30:00Z"}
+      ],
+      "ci_status": "passing",
+      "additions": 342,
+      "deletions": 28,
+      "linked_ticket": "MERC-220"
+    },
+    {
+      "number": 144,
+      "title": "fix(payment): add retry logic for failed transactions",
+      "author": "tom.mueller",
+      "status": "merged",
+      "created_at": "2026-03-10T11:00:00Z",
+      "updated_at": "2026-03-11T16:00:00Z",
+      "merged_at": "2026-03-11T16:00:00Z",
+      "base_branch": "main",
+      "head_branch": "fix/MERC-222-retry-logic",
+      "reviews": [
+        {"reviewer": "sarah.chen", "status": "approved", "submitted_at": "2026-03-11T11:00:00Z"}
+      ],
+      "ci_status": "passing",
+      "additions": 178,
+      "deletions": 45,
+      "linked_ticket": "MERC-222"
+    },
+    {
+      "number": 141,
+      "title": "refactor(payment): payment error handling",
+      "author": "marcus.johnson",
+      "status": "open",
+      "created_at": "2026-03-08T09:30:00Z",
+      "updated_at": "2026-03-08T11:45:00Z",
+      "merged_at": null,
+      "base_branch": "main",
+      "head_branch": "refactor/MERC-226-error-handling",
+      "reviews": [],
+      "ci_status": "passing",
+      "additions": 156,
+      "deletions": 89,
+      "linked_ticket": "MERC-226"
+    },
+    {
+      "number": 149,
+      "title": "feat(payment): build reconciliation dashboard",
+      "author": "priya.sharma",
+      "status": "open",
+      "created_at": "2026-03-10T11:00:00Z",
+      "updated_at": "2026-03-12T14:30:00Z",
+      "base_branch": "main",
+      "head_branch": "feat/MERC-231-reconciliation-dashboard",
+      "reviews": [
+        {"reviewer": "lea.dubois", "status": "changes_requested", "submitted_at": "2026-03-11T16:00:00Z"},
+        {"reviewer": "lea.dubois", "status": "approved", "submitted_at": "2026-03-12T10:30:00Z"}
+      ],
+      "ci_status": "passing",
+      "additions": 612,
+      "deletions": 87,
+      "linked_ticket": "MERC-231"
+    }
+  ]
+}

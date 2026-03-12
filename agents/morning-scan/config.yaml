@@ -1,0 +1,16 @@
+# Morning Scan — Configuration
+
+# Stale PR threshold (hours without review)
+stale_pr_hours: 48
+
+# Overload threshold (active tickets per developer)
+overload_threshold: 5
+
+# Idle threshold (active tickets per developer — flag if below)
+idle_threshold: 1
+
+# CI failure threshold (consecutive failures to flag)
+ci_failure_threshold: 2
+
+# Show overnight changes from the last N hours
+overnight_window_hours: 16
