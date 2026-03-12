@@ -1,0 +1,402 @@
+[
+  {
+    "sha": "a1f2e3d",
+    "message": "feat(payment): add payment schema migrations\n\nMERC-202",
+    "author": "sarah.chen",
+    "date": "2026-02-26T10:30:00Z",
+    "branch": "feat/MERC-202-payment-data-model",
+    "files_changed": 5
+  },
+  {
+    "sha": "b2c3d4e",
+    "message": "feat(payment): add entity relationship constraints\n\nMERC-202",
+    "author": "sarah.chen",
+    "date": "2026-02-27T09:15:00Z",
+    "branch": "feat/MERC-202-payment-data-model",
+    "files_changed": 3
+  },
+  {
+    "sha": "c3d4e5f",
+    "message": "feat(payment): implement transaction state machine\n\nMERC-203",
+    "author": "tom.mueller",
+    "date": "2026-02-27T14:00:00Z",
+    "branch": "feat/MERC-203-transaction-processing",
+    "files_changed": 7
+  },
+  {
+    "sha": "d4e5f6a",
+    "message": "feat(payment): add transaction rollback support\n\nMERC-203",
+    "author": "tom.mueller",
+    "date": "2026-02-28T11:00:00Z",
+    "branch": "feat/MERC-203-transaction-processing",
+    "files_changed": 4
+  },
+  {
+    "sha": "e5f6a7b",
+    "message": "feat(payment): add JWT validation for API auth\n\nMERC-204",
+    "author": "priya.sharma",
+    "date": "2026-03-01T10:00:00Z",
+    "branch": "feat/MERC-204-api-auth-middleware",
+    "files_changed": 6
+  },
+  {
+    "sha": "f6a7b8c",
+    "message": "feat(payment): implement merchant form validation\n\nMERC-205",
+    "author": "lea.dubois",
+    "date": "2026-03-02T09:30:00Z",
+    "branch": "feat/MERC-205-merchant-onboarding",
+    "files_changed": 8
+  },
+  {
+    "sha": "a7b8c9d",
+    "message": "feat(payment): add idempotency key generation\n\nMERC-207",
+    "author": "sarah.chen",
+    "date": "2026-03-04T11:00:00Z",
+    "branch": "feat/MERC-207-idempotency-keys",
+    "files_changed": 3
+  },
+  {
+    "sha": "b8c9d0e",
+    "message": "feat(payment): add idempotency key validation\n\nMERC-207",
+    "author": "sarah.chen",
+    "date": "2026-03-05T09:00:00Z",
+    "branch": "feat/MERC-207-idempotency-keys",
+    "files_changed": 4
+  },
+  {
+    "sha": "m01a2b3",
+    "message": "Merge pull request #155 from feat/MERC-202-payment-data-model",
+    "author": "sarah.chen",
+    "date": "2026-02-27T14:00:00Z",
+    "branch": "main",
+    "files_changed": 5
+  },
+  {
+    "sha": "m02b3c4",
+    "message": "Merge pull request #138 from feat/MERC-203-transaction-processing",
+    "author": "tom.mueller",
+    "date": "2026-02-28T16:30:00Z",
+    "branch": "main",
+    "files_changed": 7
+  },
+  {
+    "sha": "m03c4d5",
+    "message": "Merge pull request #139 from feat/MERC-204-api-auth-middleware",
+    "author": "priya.sharma",
+    "date": "2026-03-02T15:45:00Z",
+    "branch": "main",
+    "files_changed": 6
+  },
+  {
+    "sha": "m04d5e6",
+    "message": "Merge pull request #140 from feat/MERC-205-merchant-onboarding",
+    "author": "lea.dubois",
+    "date": "2026-03-03T17:00:00Z",
+    "branch": "main",
+    "files_changed": 8
+  },
+  {
+    "sha": "m05e6f7",
+    "message": "Merge pull request #142 from feat/MERC-207-idempotency-keys",
+    "author": "sarah.chen",
+    "date": "2026-03-05T16:00:00Z",
+    "branch": "main",
+    "files_changed": 4
+  },
+  {
+    "sha": "c9d0e1f",
+    "message": "refactor(payment): extract error types\n\nMERC-226",
+    "author": "marcus.johnson",
+    "date": "2026-03-07T16:00:00Z",
+    "branch": "refactor/MERC-226-error-handling",
+    "files_changed": 5
+  },
+  {
+    "sha": "d0e1f2a",
+    "message": "refactor(payment): add error mapping layer\n\nMERC-226",
+    "author": "marcus.johnson",
+    "date": "2026-03-08T11:30:00Z",
+    "branch": "refactor/MERC-226-error-handling",
+    "files_changed": 3
+  },
+  {
+    "sha": "e1f2a3b",
+    "message": "feat(payment): scaffold settlement report model\n\nMERC-233",
+    "author": "marcus.johnson",
+    "date": "2026-03-08T14:00:00Z",
+    "branch": "feat/MERC-233-settlement-reports",
+    "files_changed": 4
+  },
+  {
+    "sha": "f2a3b4c",
+    "message": "feat(payment): add settlement data aggregation\n\nMERC-233",
+    "author": "marcus.johnson",
+    "date": "2026-03-09T10:00:00Z",
+    "branch": "feat/MERC-233-settlement-reports",
+    "files_changed": 6
+  },
+  {
+    "sha": "a3b4c5d",
+    "message": "chore(payment): update email template styles\n\nMERC-223",
+    "author": "lea.dubois",
+    "date": "2026-03-10T09:30:00Z",
+    "branch": "chore/MERC-223-email-template",
+    "files_changed": 2
+  },
+  {
+    "sha": "b4c5d6e",
+    "message": "feat(payment): add gateway SDK v3 client wrapper\n\nMERC-220",
+    "author": "sarah.chen",
+    "date": "2026-03-10T10:00:00Z",
+    "branch": "feat/MERC-220-gateway-sdk-v3",
+    "files_changed": 6
+  },
+  {
+    "sha": "c5d6e7f",
+    "message": "feat(payment): create webhook endpoint scaffold\n\nMERC-228",
+    "author": "marcus.johnson",
+    "date": "2026-03-10T09:00:00Z",
+    "branch": "feat/MERC-228-payment-webhook",
+    "files_changed": 4
+  },
+  {
+    "sha": "d6e7f8a",
+    "message": "fix(payment): add exponential backoff for retries\n\nMERC-222",
+    "author": "tom.mueller",
+    "date": "2026-03-10T11:00:00Z",
+    "branch": "fix/MERC-222-retry-logic",
+    "files_changed": 3
+  },
+  {
+    "sha": "e7f8a9b",
+    "message": "feat(payment): scaffold batch processor service\n\nMERC-234",
+    "author": "marcus.johnson",
+    "date": "2026-03-10T14:00:00Z",
+    "branch": "feat/MERC-234-batch-processor",
+    "files_changed": 5
+  },
+  {
+    "sha": "f8a9b0c",
+    "message": "feat(payment): implement SDK v3 authentication\n\nMERC-220",
+    "author": "sarah.chen",
+    "date": "2026-03-10T15:00:00Z",
+    "branch": "feat/MERC-220-gateway-sdk-v3",
+    "files_changed": 4
+  },
+  {
+    "sha": "a9b0c1d",
+    "message": "feat(payment): add webhook event types\n\nMERC-228",
+    "author": "marcus.johnson",
+    "date": "2026-03-10T14:30:00Z",
+    "branch": "feat/MERC-228-payment-webhook",
+    "files_changed": 3
+  },
+  {
+    "sha": "b0c1d2e",
+    "message": "feat(payment): scaffold reconciliation dashboard\n\nMERC-231",
+    "author": "priya.sharma",
+    "date": "2026-03-10T11:00:00Z",
+    "branch": "feat/MERC-231-reconciliation-dashboard",
+    "files_changed": 7
+  },
+  {
+    "sha": "m06f7a8",
+    "message": "Merge pull request #146 from chore/MERC-223-email-template",
+    "author": "lea.dubois",
+    "date": "2026-03-10T15:30:00Z",
+    "branch": "main",
+    "files_changed": 2
+  },
+  {
+    "sha": "c1d2e3f",
+    "message": "feat(payment): add webhook signature validation\n\nMERC-230",
+    "author": "sarah.chen",
+    "date": "2026-03-11T09:15:00Z",
+    "branch": "feat/MERC-230-webhook-migration",
+    "files_changed": 4
+  },
+  {
+    "sha": "d2e3f4a",
+    "message": "feat(payment): add structured audit log format\n\nMERC-225",
+    "author": "kenji.tanaka",
+    "date": "2026-03-11T11:00:00Z",
+    "branch": "feat/MERC-225-audit-logging",
+    "files_changed": 5
+  },
+  {
+    "sha": "e3f4a5b",
+    "message": "feat(payment): implement webhook delivery confirmation\n\nMERC-228",
+    "author": "marcus.johnson",
+    "date": "2026-03-11T09:00:00Z",
+    "branch": "feat/MERC-228-payment-webhook",
+    "files_changed": 3
+  },
+  {
+    "sha": "f4a5b6c",
+    "message": "test(payment): add unit tests for SDK v3 client\n\nMERC-220",
+    "author": "sarah.chen",
+    "date": "2026-03-11T10:00:00Z",
+    "branch": "feat/MERC-220-gateway-sdk-v3",
+    "files_changed": 3
+  },
+  {
+    "sha": "a5b6c7d",
+    "message": "feat(payment): add card number validation\n\nMERC-232",
+    "author": "lea.dubois",
+    "date": "2026-03-11T10:00:00Z",
+    "branch": "feat/MERC-232-payment-validation",
+    "files_changed": 4
+  },
+  {
+    "sha": "b6c7d8e",
+    "message": "feat(payment): add batch validation logic\n\nMERC-234",
+    "author": "marcus.johnson",
+    "date": "2026-03-11T10:30:00Z",
+    "branch": "feat/MERC-234-batch-processor",
+    "files_changed": 4
+  },
+  {
+    "sha": "c7d8e9f",
+    "message": "fix(payment): add max retry limit and dead letter queue\n\nMERC-222",
+    "author": "tom.mueller",
+    "date": "2026-03-11T09:30:00Z",
+    "branch": "fix/MERC-222-retry-logic",
+    "files_changed": 3
+  },
+  {
+    "sha": "d8e9f0a",
+    "message": "feat(payment): add transaction matching algorithm\n\nMERC-231",
+    "author": "priya.sharma",
+    "date": "2026-03-11T09:45:00Z",
+    "branch": "feat/MERC-231-reconciliation-dashboard",
+    "files_changed": 5
+  },
+  {
+    "sha": "e9f0a1b",
+    "message": "feat(payment): implement webhook retry queue\n\nMERC-230",
+    "author": "sarah.chen",
+    "date": "2026-03-11T14:30:00Z",
+    "branch": "feat/MERC-230-webhook-migration",
+    "files_changed": 3
+  },
+  {
+    "sha": "f0a1b2c",
+    "message": "feat(payment): implement parallel processing\n\nMERC-234",
+    "author": "marcus.johnson",
+    "date": "2026-03-11T15:00:00Z",
+    "branch": "feat/MERC-234-batch-processor",
+    "files_changed": 6
+  },
+  {
+    "sha": "a1b2c3e",
+    "message": "feat(payment): implement audit log rotation\n\nMERC-225",
+    "author": "kenji.tanaka",
+    "date": "2026-03-11T16:00:00Z",
+    "branch": "feat/MERC-225-audit-logging",
+    "files_changed": 3
+  },
+  {
+    "sha": "b2c3d4f",
+    "message": "feat(payment): implement discrepancy detection\n\nMERC-231",
+    "author": "priya.sharma",
+    "date": "2026-03-11T16:20:00Z",
+    "branch": "feat/MERC-231-reconciliation-dashboard",
+    "files_changed": 4
+  },
+  {
+    "sha": "m07a8b9",
+    "message": "Merge pull request #143 from feat/MERC-220-gateway-sdk-v3",
+    "author": "sarah.chen",
+    "date": "2026-03-11T17:00:00Z",
+    "branch": "main",
+    "files_changed": 6
+  },
+  {
+    "sha": "m08b9c0",
+    "message": "Merge pull request #144 from fix/MERC-222-retry-logic",
+    "author": "tom.mueller",
+    "date": "2026-03-11T16:00:00Z",
+    "branch": "main",
+    "files_changed": 3
+  },
+  {
+    "sha": "c3d4e5a",
+    "message": "test(payment): add audit logging integration tests\n\nMERC-225",
+    "author": "kenji.tanaka",
+    "date": "2026-03-12T09:00:00Z",
+    "branch": "feat/MERC-225-audit-logging",
+    "files_changed": 4
+  },
+  {
+    "sha": "d4e5f6b",
+    "message": "feat(payment): add expiry date validation\n\nMERC-232",
+    "author": "lea.dubois",
+    "date": "2026-03-12T09:00:00Z",
+    "branch": "feat/MERC-232-payment-validation",
+    "files_changed": 3
+  },
+  {
+    "sha": "e5f6a7c",
+    "message": "feat(payment): add reconciliation summary view\n\nMERC-231",
+    "author": "priya.sharma",
+    "date": "2026-03-12T09:30:00Z",
+    "branch": "feat/MERC-231-reconciliation-dashboard",
+    "files_changed": 5
+  },
+  {
+    "sha": "f6a7b8d",
+    "message": "fix(payment): handle batch size limits\n\nMERC-234",
+    "author": "marcus.johnson",
+    "date": "2026-03-12T09:45:00Z",
+    "branch": "feat/MERC-234-batch-processor",
+    "files_changed": 2
+  },
+  {
+    "sha": "m09c0d1",
+    "message": "Merge pull request #153 from feat/MERC-228-payment-webhook",
+    "author": "marcus.johnson",
+    "date": "2026-03-12T10:00:00Z",
+    "branch": "main",
+    "files_changed": 4
+  },
+  {
+    "sha": "a7b8c9e",
+    "message": "feat(payment): add webhook payload transformation\n\nMERC-230",
+    "author": "sarah.chen",
+    "date": "2026-03-12T10:15:00Z",
+    "branch": "feat/MERC-230-webhook-migration",
+    "files_changed": 4
+  },
+  {
+    "sha": "b8c9d0f",
+    "message": "feat(payment): add CVV validation rules\n\nMERC-232",
+    "author": "lea.dubois",
+    "date": "2026-03-12T11:30:00Z",
+    "branch": "feat/MERC-232-payment-validation",
+    "files_changed": 2
+  },
+  {
+    "sha": "c9d0e1a",
+    "message": "fix(payment): fix race condition in batch processor\n\nMERC-234",
+    "author": "marcus.johnson",
+    "date": "2026-03-12T13:00:00Z",
+    "branch": "feat/MERC-234-batch-processor",
+    "files_changed": 3
+  },
+  {
+    "sha": "m10d1e2",
+    "message": "Merge pull request #147 from feat/MERC-225-audit-logging",
+    "author": "kenji.tanaka",
+    "date": "2026-03-12T14:00:00Z",
+    "branch": "main",
+    "files_changed": 5
+  },
+  {
+    "sha": "d0e1f2b",
+    "message": "feat(payment): add export to CSV for reconciliation\n\nMERC-231",
+    "author": "priya.sharma",
+    "date": "2026-03-12T14:00:00Z",
+    "branch": "feat/MERC-231-reconciliation-dashboard",
+    "files_changed": 3
+  }
+]

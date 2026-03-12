@@ -1,0 +1,283 @@
+[
+  {
+    "number": 138,
+    "title": "feat(payment): implement basic transaction processing",
+    "author": "tom.mueller",
+    "status": "merged",
+    "created_at": "2026-02-26T10:00:00Z",
+    "updated_at": "2026-02-28T16:30:00Z",
+    "merged_at": "2026-02-28T16:30:00Z",
+    "base_branch": "main",
+    "head_branch": "feat/MERC-203-transaction-processing",
+    "reviews": [
+      {"reviewer": "sarah.chen", "status": "approved", "submitted_at": "2026-02-28T14:00:00Z"}
+    ],
+    "ci_status": "passing",
+    "additions": 487,
+    "deletions": 32,
+    "linked_ticket": "MERC-203"
+  },
+  {
+    "number": 139,
+    "title": "feat(payment): create API authentication middleware",
+    "author": "priya.sharma",
+    "status": "merged",
+    "created_at": "2026-02-28T09:00:00Z",
+    "updated_at": "2026-03-02T15:45:00Z",
+    "merged_at": "2026-03-02T15:45:00Z",
+    "base_branch": "main",
+    "head_branch": "feat/MERC-204-api-auth-middleware",
+    "reviews": [
+      {"reviewer": "tom.mueller", "status": "approved", "submitted_at": "2026-03-02T11:00:00Z"}
+    ],
+    "ci_status": "passing",
+    "additions": 312,
+    "deletions": 18,
+    "linked_ticket": "MERC-204"
+  },
+  {
+    "number": 140,
+    "title": "feat(payment): build merchant onboarding form",
+    "author": "lea.dubois",
+    "status": "merged",
+    "created_at": "2026-03-01T10:00:00Z",
+    "updated_at": "2026-03-03T17:00:00Z",
+    "merged_at": "2026-03-03T17:00:00Z",
+    "base_branch": "main",
+    "head_branch": "feat/MERC-205-merchant-onboarding",
+    "reviews": [
+      {"reviewer": "priya.sharma", "status": "approved", "submitted_at": "2026-03-03T14:30:00Z"}
+    ],
+    "ci_status": "passing",
+    "additions": 524,
+    "deletions": 41,
+    "linked_ticket": "MERC-205"
+  },
+  {
+    "number": 141,
+    "title": "refactor(payment): payment error handling",
+    "author": "marcus.johnson",
+    "status": "open",
+    "created_at": "2026-03-08T09:30:00Z",
+    "updated_at": "2026-03-08T11:45:00Z",
+    "merged_at": null,
+    "base_branch": "main",
+    "head_branch": "refactor/MERC-226-error-handling",
+    "reviews": [],
+    "ci_status": "passing",
+    "additions": 156,
+    "deletions": 89,
+    "linked_ticket": "MERC-226"
+  },
+  {
+    "number": 142,
+    "title": "feat(payment): implement idempotency keys",
+    "author": "sarah.chen",
+    "status": "merged",
+    "created_at": "2026-03-03T08:30:00Z",
+    "updated_at": "2026-03-05T16:00:00Z",
+    "merged_at": "2026-03-05T16:00:00Z",
+    "base_branch": "main",
+    "head_branch": "feat/MERC-207-idempotency-keys",
+    "reviews": [
+      {"reviewer": "kenji.tanaka", "status": "approved", "submitted_at": "2026-03-05T10:30:00Z"}
+    ],
+    "ci_status": "passing",
+    "additions": 198,
+    "deletions": 24,
+    "linked_ticket": "MERC-207"
+  },
+  {
+    "number": 143,
+    "title": "feat(payment): implement gateway SDK v3 client",
+    "author": "sarah.chen",
+    "status": "merged",
+    "created_at": "2026-03-10T10:00:00Z",
+    "updated_at": "2026-03-11T17:00:00Z",
+    "merged_at": "2026-03-11T17:00:00Z",
+    "base_branch": "main",
+    "head_branch": "feat/MERC-220-gateway-sdk-v3",
+    "reviews": [
+      {"reviewer": "tom.mueller", "status": "approved", "submitted_at": "2026-03-11T14:30:00Z"}
+    ],
+    "ci_status": "passing",
+    "additions": 342,
+    "deletions": 28,
+    "linked_ticket": "MERC-220"
+  },
+  {
+    "number": 144,
+    "title": "fix(payment): add retry logic for failed transactions",
+    "author": "tom.mueller",
+    "status": "merged",
+    "created_at": "2026-03-10T11:00:00Z",
+    "updated_at": "2026-03-11T16:00:00Z",
+    "merged_at": "2026-03-11T16:00:00Z",
+    "base_branch": "main",
+    "head_branch": "fix/MERC-222-retry-logic",
+    "reviews": [
+      {"reviewer": "sarah.chen", "status": "approved", "submitted_at": "2026-03-11T11:00:00Z"}
+    ],
+    "ci_status": "passing",
+    "additions": 178,
+    "deletions": 45,
+    "linked_ticket": "MERC-222"
+  },
+  {
+    "number": 145,
+    "title": "feat(payment): migrate settlement report generator",
+    "author": "marcus.johnson",
+    "status": "open",
+    "created_at": "2026-03-09T14:00:00Z",
+    "updated_at": "2026-03-09T16:30:00Z",
+    "merged_at": null,
+    "base_branch": "main",
+    "head_branch": "feat/MERC-233-settlement-reports",
+    "reviews": [],
+    "ci_status": "passing",
+    "additions": 201,
+    "deletions": 34,
+    "linked_ticket": "MERC-233"
+  },
+  {
+    "number": 146,
+    "title": "chore(payment): update confirmation email template",
+    "author": "lea.dubois",
+    "status": "merged",
+    "created_at": "2026-03-10T09:00:00Z",
+    "updated_at": "2026-03-10T15:30:00Z",
+    "merged_at": "2026-03-10T15:30:00Z",
+    "base_branch": "main",
+    "head_branch": "chore/MERC-223-email-template",
+    "reviews": [
+      {"reviewer": "priya.sharma", "status": "approved", "submitted_at": "2026-03-10T13:00:00Z"}
+    ],
+    "ci_status": "passing",
+    "additions": 47,
+    "deletions": 31,
+    "linked_ticket": "MERC-223"
+  },
+  {
+    "number": 147,
+    "title": "feat(payment): add transaction audit logging",
+    "author": "kenji.tanaka",
+    "status": "merged",
+    "created_at": "2026-03-11T09:00:00Z",
+    "updated_at": "2026-03-12T14:00:00Z",
+    "merged_at": "2026-03-12T14:00:00Z",
+    "base_branch": "main",
+    "head_branch": "feat/MERC-225-audit-logging",
+    "reviews": [
+      {"reviewer": "tom.mueller", "status": "approved", "submitted_at": "2026-03-12T11:00:00Z"}
+    ],
+    "ci_status": "passing",
+    "additions": 267,
+    "deletions": 12,
+    "linked_ticket": "MERC-225"
+  },
+  {
+    "number": 148,
+    "title": "feat(payment): migrate webhook handler",
+    "author": "sarah.chen",
+    "status": "open",
+    "created_at": "2026-03-11T09:30:00Z",
+    "updated_at": "2026-03-12T14:00:00Z",
+    "base_branch": "main",
+    "head_branch": "feat/MERC-230-webhook-migration",
+    "reviews": [
+      {"reviewer": "tom.mueller", "status": "approved", "submitted_at": "2026-03-12T11:00:00Z"}
+    ],
+    "ci_status": "passing",
+    "additions": 342,
+    "deletions": 128,
+    "linked_ticket": "MERC-230"
+  },
+  {
+    "number": 149,
+    "title": "feat(payment): build reconciliation dashboard",
+    "author": "priya.sharma",
+    "status": "open",
+    "created_at": "2026-03-10T11:00:00Z",
+    "updated_at": "2026-03-12T14:30:00Z",
+    "base_branch": "main",
+    "head_branch": "feat/MERC-231-reconciliation-dashboard",
+    "reviews": [
+      {"reviewer": "lea.dubois", "status": "changes_requested", "submitted_at": "2026-03-11T16:00:00Z"},
+      {"reviewer": "lea.dubois", "status": "approved", "submitted_at": "2026-03-12T10:30:00Z"}
+    ],
+    "ci_status": "passing",
+    "additions": 612,
+    "deletions": 87,
+    "linked_ticket": "MERC-231"
+  },
+  {
+    "number": 150,
+    "title": "feat(payment): implement batch payment processor",
+    "author": "marcus.johnson",
+    "status": "open",
+    "created_at": "2026-03-10T14:00:00Z",
+    "updated_at": "2026-03-12T13:15:00Z",
+    "base_branch": "main",
+    "head_branch": "feat/MERC-234-batch-processor",
+    "reviews": [
+      {"reviewer": "sarah.chen", "status": "changes_requested", "submitted_at": "2026-03-11T17:00:00Z"}
+    ],
+    "ci_status": "failing",
+    "additions": 489,
+    "deletions": 56,
+    "linked_ticket": "MERC-234"
+  },
+  {
+    "number": 152,
+    "title": "feat(payment): add payment method validation",
+    "author": "lea.dubois",
+    "status": "open",
+    "created_at": "2026-03-11T10:00:00Z",
+    "updated_at": "2026-03-12T11:45:00Z",
+    "base_branch": "main",
+    "head_branch": "feat/MERC-232-payment-validation",
+    "reviews": [
+      {"reviewer": "priya.sharma", "status": "approved", "submitted_at": "2026-03-12T09:30:00Z"}
+    ],
+    "ci_status": "passing",
+    "additions": 234,
+    "deletions": 19,
+    "linked_ticket": "MERC-232"
+  },
+  {
+    "number": 153,
+    "title": "feat(payment): create payment status webhook endpoint",
+    "author": "marcus.johnson",
+    "status": "merged",
+    "created_at": "2026-03-10T09:00:00Z",
+    "updated_at": "2026-03-12T10:00:00Z",
+    "merged_at": "2026-03-12T10:00:00Z",
+    "base_branch": "main",
+    "head_branch": "feat/MERC-228-payment-webhook",
+    "reviews": [
+      {"reviewer": "kenji.tanaka", "status": "approved", "submitted_at": "2026-03-11T16:30:00Z"}
+    ],
+    "ci_status": "passing",
+    "additions": 298,
+    "deletions": 42,
+    "linked_ticket": "MERC-228"
+  },
+  {
+    "number": 155,
+    "title": "feat(payment): design payment data model schema",
+    "author": "sarah.chen",
+    "status": "merged",
+    "created_at": "2026-02-25T09:00:00Z",
+    "updated_at": "2026-02-27T14:00:00Z",
+    "merged_at": "2026-02-27T14:00:00Z",
+    "base_branch": "main",
+    "head_branch": "feat/MERC-202-payment-data-model",
+    "reviews": [
+      {"reviewer": "tom.mueller", "status": "approved", "submitted_at": "2026-02-27T11:00:00Z"}
+    ],
+    "ci_status": "passing",
+    "additions": 156,
+    "deletions": 0,
+    "linked_ticket": "MERC-202"
+  }
+]
