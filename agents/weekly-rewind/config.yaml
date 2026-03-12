@@ -1,0 +1,24 @@
+# Weekly Rewind — Configuration
+# Adjust these to match your team's preferences
+
+# Report tone: "formal" (for executive stakeholders), "casual" (for internal teams)
+tone: formal
+
+# Sprint duration in days (used to calculate "stale" thresholds)
+sprint_duration_days: 10
+
+# Sections to include (set to false to hide)
+sections:
+  highlights: true
+  completed: true
+  in_progress: true
+  risks: true
+  decisions: true  # Requires Slack data
+  next_week: true
+  sprint_health: true
+
+# Stale threshold: tickets "In Progress" with no PR activity for this many days
+stale_threshold_days: 3
+
+# Maximum items to show per section before summarizing
+max_items_per_section: 10
