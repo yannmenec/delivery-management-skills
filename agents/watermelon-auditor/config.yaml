@@ -1,0 +1,79 @@
+# Watermelon Auditor — Configuration
+
+name: watermelon-auditor
+version: "1.0.0"
+description: "Cross-references Jira status against GitHub activity to detect false reporting and produce a Trust Score"
+
+# Problem Card
+frustration: "watermelon-reporting"
+frustration_rank: 1
+roles: ["delivery-manager", "scrum-master", "program-manager", "project-manager"]
+
+# Complexity levels
+levels:
+  L1:
+    status: "ready"
+    interface: "paste"
+    setup: "none"
+  L2:
+    status: "planned"
+    interface: "mcp"
+    setup: "atlassian-mcp, github-mcp"
+  L3:
+    status: "planned"
+    interface: "orchestrated"
+    setup: "mcp + morning-scan + blocker-detective"
+
+# Data requirements
+inputs:
+  - name: "jira-sprint-data"
+    format: "JSON or CSV"
+    required: true
+    description: "Sprint tickets with status, assignee, dates, linked PRs"
+  - name: "github-prs"
+    format: "JSON or CSV"
+    required: true
+    description: "PRs with merge status, CI status, linked tickets"
+  - name: "github-commits"
+    format: "JSON or CSV"
+    required: false
+    description: "Commit history for branch activity and staleness detection"
+  - name: "ci-builds"
+    format: "JSON or CSV"
+    required: false
+    description: "CI build results with pass/fail status and failed tests"
+
+# Output
+outputs:
+  - name: "trust-score-report"
+    format: "markdown"
+    description: "Trust Score, ticket audit, pattern detection, actions"
+
+# Tunable parameters
+config:
+  stale_threshold_hours: 72
+  watermelon_threshold: 2
+  trust_score_healthy: 80
+  trust_score_concerning: 60
+  non_code_labels:
+    - documentation
+    - design
+    - meeting
+    - planning
+    - process
+
+# Sections to include (set to false to hide)
+sections:
+  trust_score: true
+  watermelons: true
+  stale_at_risk: true
+  unlinked: true
+  patterns: true
+  recommendations: true
+
+# Success criteria
+success_criteria:
+  - "Detects 80%+ of false 'Green' statuses on sample data"
+  - "Trust Score is mathematically consistent"
+  - "Works on Claude, GPT-4, and Gemini"
+  - "Output is directly usable by a Delivery Manager"
