@@ -1,0 +1,84 @@
+# Blocker Detective — Configuration
+
+name: blocker-detective
+version: "1.0.0"
+description: "Scans sprint data to surface blockers, stale work, and overload before standup — so your daily ceremony becomes a decision meeting, not status theater"
+
+# Problem Card
+frustration: "meeting-overload, dependency-tracking"
+frustration_rank: [4, 5]
+roles: ["delivery-manager", "scrum-master", "program-manager", "project-manager"]
+
+# Complexity levels
+levels:
+  L1:
+    status: "ready"
+    interface: "paste"
+    setup: "none"
+  L2:
+    status: "planned"
+    interface: "mcp"
+    setup: "atlassian-mcp, github-mcp"
+  L3:
+    status: "planned"
+    interface: "orchestrated"
+    setup: "mcp + watermelon-auditor + morning-scan"
+
+# Data requirements
+inputs:
+  - name: "jira-sprint-data"
+    format: "JSON or CSV"
+    required: true
+    description: "Sprint tickets with status, assignee, dates, linked PRs, blockers"
+  - name: "github-prs"
+    format: "JSON or CSV"
+    required: true
+    description: "PRs with status, reviews, CI status, linked tickets"
+  - name: "github-commits"
+    format: "JSON or CSV"
+    required: false
+    description: "Commit history for branch activity and staleness detection"
+    fallback: "PR updated_at used for freshness signals"
+  - name: "ci-builds"
+    format: "JSON or CSV"
+    required: false
+    description: "CI build results with pass/fail status, failed tests, coverage"
+    fallback: "CI signals skipped with warning"
+
+# Output
+outputs:
+  - name: "blocker-report"
+    format: "markdown"
+    description: "Prioritized blockers, watch list, developer load map, standup agenda, recommended actions"
+
+# Tunable thresholds — adjust for your team's norms
+config:
+  pr_age_warning_hours: 48
+  pr_age_critical_hours: 72
+  review_wait_warning_hours: 24
+  review_wait_critical_hours: 48
+  ci_failure_streak_warning: 2
+  ci_failure_streak_critical: 3
+  stale_work_warning_days: 2
+  stale_work_critical_days: 4
+  developer_load_warning: 4
+  developer_load_critical: 6
+  ghost_sprint_item_days: 3
+
+# Sections to include (set to false to hide)
+sections:
+  critical_blockers: true
+  watch_list: true
+  healthy_signals: true
+  developer_load: true
+  standup_agenda: true
+  recommended_actions: true
+
+# Success criteria
+success_criteria:
+  - "Surfaces all known blockers in sample data"
+  - "Produces actionable standup agenda with specific decisions needed"
+  - "Developer load map matches actual ticket counts in data"
+  - "Works on Claude, GPT-4, and Gemini"
+  - "Thresholds are configurable, not hardcoded in prompt"
+  - "No false positives: healthy items are not flagged as blocked"
