@@ -29,8 +29,11 @@ claude /weekly-rewind
 # Morning briefing from sample data
 claude /morning-scan
 
-# Watermelon audit (will report "not yet available" until H2)
+# Cross-reference Jira status against GitHub activity
 claude /watermelon-audit
+
+# Surface stuck PRs, failing CI, stale work before standup
+claude /blocker-detective
 ```
 
 ### 3. Review the output

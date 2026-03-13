@@ -67,25 +67,28 @@ Each agent reads from these files as its input context. To run an agent against 
 2. Reference the data files in the agent's prompt context
 3. The agent will analyze the data and produce its report
 
-Example (conceptual — agents are created in increment H1-B):
+### Using This Data With Agents
+
+Paste the data sections after the agent prompt in your AI chat:
+
 ```
-You are the Watermelon Auditor agent.
+[Paste the contents of agents/watermelon-auditor/prompt.md here]
 
-Analyze the following Jira and GitHub data to identify tickets
-whose status doesn't match their actual development activity.
+Here is my Jira sprint data:
+[Paste contents of data/jira-sprint-42.json]
 
-<jira_data>
-{contents of data/jira-sprint-42.json}
-</jira_data>
+Here is my GitHub PR data:
+[Paste contents of data/github-prs.json]
 
-<github_prs>
-{contents of data/github-prs.json}
-</github_prs>
+Here is my GitHub commit data:
+[Paste contents of data/github-commits.json]
 
-<github_commits>
-{contents of data/github-commits.json}
-</github_commits>
+Here is my CI build data:
+[Paste contents of data/ci-builds.json]
 ```
+
+For a ready-to-paste example, see the `sample-input.md` file inside 
+each agent's `examples/` directory.
 
 ## Generating Your Own Data
 

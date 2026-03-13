@@ -20,9 +20,11 @@ In your new project, click **Add to Project Knowledge** and upload these files:
 **Required:**
 - `agents/weekly-rewind/prompt.md`
 - `agents/morning-scan/prompt.md`
+- `agents/watermelon-auditor/prompt.md`
+- `agents/blocker-detective/prompt.md`
 
 **Recommended (improves output quality):**
-- `lib/formatters/markdown-report.md`
+- `reference/formatters/markdown-report.md`
 
 You can upload files directly from the cloned repo, or copy-paste the contents into text files and upload those.
 
@@ -32,7 +34,7 @@ Open a new conversation inside the project. The agent prompts are now available 
 
 ### 4. Run an agent
 
-Paste your sprint data (or the sample data from `agents/weekly-rewind/examples/input-sample.json`) and type:
+Paste your sprint data (or the sample data from `agents/weekly-rewind/examples/sample-input.json`) and type:
 
 ```
 Run the weekly rewind on this sprint data.

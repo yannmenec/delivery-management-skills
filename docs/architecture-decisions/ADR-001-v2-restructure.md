@@ -17,12 +17,12 @@ Specific problems with v1:
 
 ## Decision
 
-Restructure around self-contained agent packages. Each agent has its own directory with: prompt, runner, config, and examples. Shared utilities live in `lib/`. V1 content is archived, not deleted.
+Restructure around self-contained agent packages. Each agent has its own directory with: prompt, runner, config, and examples. Shared utilities live in `reference/`. V1 content is archived, not deleted.
 
 Key architectural choices:
 
 1. **Agent as the unit of value**: Each agent directory is independently usable — paste the prompt, point it at data, get a report.
-2. **Shared parsers and formatters**: Common data parsing (Jira, GitHub) and output formatting (Markdown, Slack) live in `lib/` as prompt fragments that agents include.
+2. **Shared parsers and formatters**: Common data parsing (Jira, GitHub) and output formatting (Markdown, Slack) live in `reference/` as prompt fragments that agents include.
 3. **Sample data as first-class**: The `data/` directory provides realistic, cross-referenced datasets that work out of the box.
 4. **MCP configs as templates**: The `mcp/` directory provides copy-paste configuration for live data connections.
 5. **Progressive complexity**: Level 1 (paste prompt + data), Level 2 (MCP live data), Level 3 (orchestrated multi-agent).

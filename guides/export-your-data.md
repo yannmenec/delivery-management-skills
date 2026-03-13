@@ -275,10 +275,21 @@ You can include any combination. Missing sources are handled gracefully — the 
 
 ---
 
+## Which Data Each Agent Needs
+
+| Agent | Jira | GitHub PRs | GitHub Commits | CI Builds | Slack |
+|-------|------|-----------|----------------|-----------|-------|
+| **Weekly Rewind** | Required | Optional | — | — | Optional |
+| **Morning Scan** | Required | Optional | Optional | Optional | Optional |
+| **Watermelon Auditor** | Required | Required | Optional | Optional | — |
+| **Blocker Detective** | Required | Required | Optional | Optional | — |
+
+The Watermelon Auditor and Blocker Detective rely heavily on GitHub PR data to cross-reference Jira ticket status against actual code activity. For these agents, exporting both Jira and GitHub PRs is strongly recommended.
+
 ## Tips
 
 - **Start with just Jira.** It's the most impactful source and produces 80% of the report value.
-- **Add GitHub PRs second.** They enable cross-referencing (are tickets really "Done"?) and PR health analysis.
+- **Add GitHub PRs second.** They enable cross-referencing (are tickets really "Done"?) and PR health analysis. Required for the Watermelon Auditor and Blocker Detective.
 - **Slack is optional but valuable.** Decisions and scope changes add rich context to weekly reports.
-- **CI data is optional.** Most useful for the Morning Scan's "Build Health" section.
+- **CI data is optional.** Most useful for the Morning Scan's "Build Health" section and Blocker Detective's CI failure streak detection.
 - **Re-export weekly.** The agents work on point-in-time snapshots. Fresh data = fresh insights.

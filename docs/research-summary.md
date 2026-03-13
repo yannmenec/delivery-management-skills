@@ -12,13 +12,13 @@ One-page actionable digest of the delivery management AI research. For contribut
 
 ## Top 5 Agents to Build (Priority Order)
 
-| # | Agent | Frustration Solved | Complexity | Value |
-|---|-------|--------------------|------------|-------|
-| 1 | **Morning Scan** | Admin Tax, Meeting Overload | Low | High |
-| 2 | **Watermelon Auditor** | Watermelon Reporting | Medium | High |
-| 3 | **Blocker Detective** | Dependency Tracking | Medium | High |
-| 4 | **Weekly Rewind** | Admin Tax, Scope Creep | Medium | Medium |
-| 5 | **Sprint Retro Prep** | Meeting Overload | Low | Medium |
+| # | Agent | Frustration Solved | Complexity | Value | Status |
+|---|-------|--------------------|------------|-------|--------|
+| 1 | **Morning Scan** | Admin Tax, Meeting Overload | Low | High | ✅ Shipped |
+| 2 | **Watermelon Auditor** | Watermelon Reporting | Medium | High | ✅ Shipped |
+| 3 | **Blocker Detective** | Dependency Tracking | Medium | High | ✅ Shipped |
+| 4 | **Weekly Rewind** | Admin Tax, Scope Creep | Medium | Medium | ✅ Shipped |
+| 5 | **Sprint Retro Prep** | Meeting Overload | Low | Medium | Planned |
 
 The order reflects a build-on-foundation approach: Morning Scan establishes the data pipeline, Watermelon Auditor and Blocker Detective build on the same data for deeper analysis, and Weekly Rewind and Sprint Retro Prep compose outputs from the earlier agents.
 
@@ -50,17 +50,18 @@ The order reflects a build-on-foundation approach: Morning Scan establishes the 
 ## Build Sequence
 
 ```
-H1-A: Foundation (repo structure, sample data, shared lib)     ← YOU ARE HERE
-H1-B: Core agents (morning-scan, watermelon-auditor, blocker-detective)
-H1-C: Composition agents (weekly-rewind, sprint-retro-prep)
-H2:   MCP live integration, evaluation framework, orchestration
+H1-A: Foundation (repo structure, sample data, shared lib)     ✅ Complete
+H1-B: Core agents (weekly-rewind, morning-scan)                ✅ Complete
+H2-A: Expanded agents (watermelon-auditor, blocker-detective)  ✅ Complete
+H2-B: Sprint Retro Prep, evaluation framework                  ← CURRENT (4/5 agents shipped)
+H3:   MCP live integration, orchestration, scheduling          Planned
 ```
 
 ## Contributing
 
 When adding a new agent:
 1. Start from the agent package template (defined in H1-B)
-2. Write the prompt using shared parsers from `lib/parsers/`
-3. Format output using shared formatters from `lib/formatters/`
+2. Write the prompt using shared parsers from `reference/parsers/`
+3. Format output using shared formatters from `reference/formatters/`
 4. Test against sample data in `data/` before connecting to live MCP
 5. Add evaluation criteria and golden output examples

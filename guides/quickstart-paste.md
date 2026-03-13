@@ -14,6 +14,8 @@ Start with **Weekly Rewind** — it produces the most immediately useful output 
 |-------|----------|------|
 | Weekly Rewind | Friday status reports | `agents/weekly-rewind/prompt.md` |
 | Morning Scan | Daily standup prep | `agents/morning-scan/prompt.md` |
+| Watermelon Auditor | Verifying Jira status against GitHub activity — detecting false "Green" reporting | `agents/watermelon-auditor/prompt.md` |
+| Blocker Detective | Surfacing stuck PRs, failing CI, stale work before standup | `agents/blocker-detective/prompt.md` |
 
 ### 2. Copy the prompt
 
@@ -25,7 +27,7 @@ For Weekly Rewind: [`agents/weekly-rewind/prompt.md`](../agents/weekly-rewind/pr
 
 Open the agent's example input file and copy the **entire contents**.
 
-For Weekly Rewind: [`agents/weekly-rewind/examples/input-sample.json`](../agents/weekly-rewind/examples/input-sample.json)
+For Weekly Rewind: [`agents/weekly-rewind/examples/sample-input.json`](../agents/weekly-rewind/examples/sample-input.json)
 
 ### 4. Open your AI tool
 
@@ -41,10 +43,10 @@ In the AI chat:
 
 1. **Paste the prompt** (the contents of `prompt.md`)
 2. **Press Enter** (or add a blank line)
-3. **Paste the data** (the contents of `input-sample.json`)
+3. **Paste the data** (the contents of `sample-input.json`)
 4. **Press Enter** to generate
 
-The AI will produce a formatted status report. Compare it to the expected output in `agents/weekly-rewind/examples/output-sample.md`.
+The AI will produce a formatted status report. Compare it to the expected output in `agents/weekly-rewind/examples/sample-output.md`.
 
 ### 6. Read your report
 
