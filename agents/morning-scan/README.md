@@ -1,43 +1,52 @@
-# Morning Scan
+# 🌅 Morning Scan
 
 > Surfaces blockers and priorities before standup — replacing your 20-minute morning triage ritual.
 
-## What It Does
+## The Problem
 
-The Morning Scan prepares a 2-minute briefing that tells a Delivery Manager the 3-5 things they need to know before their first meeting. It checks blocked tickets, failing CI, stale PRs, team workload, and overnight changes — so you don't have to open Jira, GitHub, and Slack separately every morning. Blockers surface first, context follows.
+Every morning, a Delivery Manager opens Jira, GitHub, and Slack separately, scanning for blocked tickets, failing CI, stale PRs, and overnight changes — just to figure out the 3-5 things they need to know before standup. This manual triage takes 20+ minutes and is easy to miss things. The Morning Scan prepares a 2-minute briefing that tells you what needs attention, who's overloaded, and what changed overnight — so you walk into standup already informed.
+
+## What You Get
+
+A pre-standup briefing containing:
+
+- **Needs Attention Now** — blocked tickets, failing CI, stale PRs requiring immediate action
+- **Overnight Changes** — PRs merged, commits pushed, and progress made since yesterday
+- **Today's Focus** — prioritized list of in-flight items with status and risk level
+- **Team Load** — per-developer ticket count and workload status
+- **Build Health** — CI pass rate, failing branches, persistent test failures
 
 ## Quick Start
 
-### Level 1 — Paste (any AI tool, 2 minutes)
+### Option A: Use Sample Data (2 minutes)
 
-1. Copy the entire contents of [`prompt.md`](prompt.md)
-2. Copy the sample data from [`examples/input-sample.json`](examples/input-sample.json)
-3. Open any AI assistant — [Claude](https://claude.ai), [ChatGPT](https://chat.openai.com), [Gemini](https://gemini.google.com), or GitHub Copilot
-4. Paste the prompt first, then paste the data on the next line
-5. Read your morning briefing
+1. Open [`prompt.md`](prompt.md) and copy everything
+2. Open [`examples/sample-input.json`](examples/sample-input.json) and copy the data
+3. Go to any AI assistant — [Claude](https://claude.ai), [ChatGPT](https://chat.openai.com), [Gemini](https://gemini.google.com)
+4. Paste the prompt first, then paste the data
+5. Get your morning briefing
 
-**Try it now with sample data:**
+The sample data uses Project Mercury (a fictional payment platform migration) with 10 sprint tickets, 5 PRs, 7 CI builds, and 5 commits. Compare your output to [`examples/sample-output.md`](examples/sample-output.md).
 
-```
-1. Open prompt.md in this directory and copy everything
-2. Open examples/input-sample.json and copy everything
-3. Go to https://claude.ai (or any AI chat)
-4. Paste the prompt, press Enter
-5. Paste the JSON data, press Enter
-6. You'll get a briefing like the one in examples/output-sample.md
-```
+### Option B: Use Your Own Data (10 minutes)
 
-**Using your own data instead of the sample:**
+**Step 1 — Export Jira sprint data:**
 
-Replace the sample JSON with your own exports. The Morning Scan works best with all four data sources (Jira, GitHub PRs, CI builds, commits), but even Jira data alone produces a useful briefing. See [`guides/export-your-data.md`](../../guides/export-your-data.md) for export instructions.
+Replace the sample JSON with your own Jira export. The Morning Scan works best with all four data sources (Jira, GitHub PRs, CI builds, commits), but even Jira data alone produces a useful briefing. See [`guides/export-your-data.md`](../../guides/export-your-data.md) for export instructions.
 
-### Level 2 — Connected (Claude Code + MCP)
+**Step 2 — (Optional) Add GitHub, CI, and commit data:**
+
+Adding PR data enables stale PR detection. CI data enables the Build Health section. Commit data enables overnight activity tracking.
+
+**Step 3 — Run the scan:**
+
+Paste the prompt first, then paste your data into any AI assistant.
+
+### Option C: Claude Code with MCP (L2)
 
 With MCP configured, Claude Code can fetch fresh data automatically each morning:
 
 ```bash
-# One-time setup: configure MCP servers (see mcp/README.md)
-# Then run:
 claude "Fetch today's sprint data and run the morning scan"
 ```
 
@@ -49,15 +58,11 @@ claude /morning-scan
 
 See [`guides/quickstart-claude-code.md`](../../guides/quickstart-claude-code.md) for full setup instructions.
 
-### Level 3 — Orchestrated (Automated)
-
-> Coming in H3
-
-Automated morning briefings posted to Slack at 8:30am every workday. The agent fetches fresh data from Jira/GitHub/Slack/CI via MCP, generates the scan, and posts to your team channel before standup.
+> **L3 — Orchestrated (coming in H3):** Automated morning briefings posted to Slack at 8:30am every workday. The agent fetches fresh data from Jira/GitHub/Slack/CI via MCP, generates the scan, and posts to your team channel before standup.
 
 ## Example Output
 
-The following briefing was generated from the sample data in [`examples/input-sample.json`](examples/input-sample.json):
+The following briefing was generated from the sample data in [`examples/sample-input.json`](examples/sample-input.json):
 
 ---
 
@@ -107,6 +112,14 @@ The following briefing was generated from the sample data in [`examples/input-sa
 
 ---
 
+## How It Works
+
+1. **Parse**: read Jira tickets, GitHub PRs, CI builds, and commit data from the provided input
+2. **Triage**: identify blocked tickets, failing CI, stale PRs, and idle developers
+3. **Prioritize**: rank items by severity — blockers first, then at-risk, then on-track
+4. **Map load**: count active tickets per developer and flag overload or idle states
+5. **Report**: produce a 2-minute briefing with immediate actions, priorities, and team status
+
 ## Configuration
 
 See [`config.yaml`](config.yaml) for tunable parameters:
@@ -118,3 +131,16 @@ See [`config.yaml`](config.yaml) for tunable parameters:
 | `idle_threshold` | `1` | Active tickets below which a dev is flagged as idle |
 | `ci_failure_threshold` | `2` | Consecutive CI failures before flagging a branch |
 | `overnight_window_hours` | `16` | How far back to look for overnight changes |
+
+## Limitations
+
+- Best results with all 5 data sources; useful but less comprehensive with Jira alone
+- Stale PR detection depends on accurate timestamps in exported data
+- Does not detect blockers communicated only in Slack threads (use full Slack export for partial coverage)
+- Team load calculation counts tickets, not effort — a developer with 2 large items may be more loaded than one with 4 small items
+
+## Related Agents
+
+- [Weekly Rewind](../weekly-rewind/) — Weekly client reports (uses similar data, different cadence)
+- [Watermelon Auditor](../watermelon-auditor/) — Trust verification of reported status
+- [Blocker Detective](../blocker-detective/) — Deeper blocker analysis with standup agenda

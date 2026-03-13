@@ -1,11 +1,56 @@
 # Weekly Rewind — Configuration
-# Adjust these to match your team's preferences
 
-# Report tone: "formal" (for executive stakeholders), "casual" (for internal teams)
-tone: formal
+name: weekly-rewind
+version: "1.0.0"
+description: "Generates client-ready weekly status reports from sprint data"
 
-# Sprint duration in days (used to calculate "stale" thresholds)
-sprint_duration_days: 10
+# Problem Card
+frustration: "admin-tax"
+frustration_rank: 2
+roles: ["delivery-manager", "scrum-master", "project-manager"]
+
+# Complexity levels
+levels:
+  L1:
+    status: "ready"
+    interface: "paste"
+    setup: "none"
+  L2:
+    status: "planned"
+    interface: "mcp"
+    setup: "atlassian-mcp, github-mcp, slack-mcp"
+  L3:
+    status: "planned"
+    interface: "orchestrated"
+    setup: "mcp + morning-scan"
+
+# Data requirements
+inputs:
+  - name: "jira-sprint-data"
+    format: "JSON or CSV"
+    required: true
+    description: "Sprint tickets with status, assignee, dates, story points"
+  - name: "slack-decisions"
+    format: "JSON"
+    required: false
+    fallback: "Decision context omitted from report"
+  - name: "github-prs"
+    format: "JSON"
+    required: false
+    fallback: "PR summary section omitted"
+
+# Output
+outputs:
+  - name: "weekly-status-report"
+    format: "markdown"
+    description: "Client-ready weekly report with progress, risks, blockers, and next steps"
+
+# Tunable parameters
+config:
+  tone: formal
+  sprint_duration_days: 10
+  stale_threshold_days: 3
+  max_items_per_section: 10
 
 # Sections to include (set to false to hide)
 sections:
@@ -13,12 +58,13 @@ sections:
   completed: true
   in_progress: true
   risks: true
-  decisions: true  # Requires Slack data
+  decisions: true
   next_week: true
   sprint_health: true
 
-# Stale threshold: tickets "In Progress" with no PR activity for this many days
-stale_threshold_days: 3
-
-# Maximum items to show per section before summarizing
-max_items_per_section: 10
+# Success criteria
+success_criteria:
+  - "Output rated 'send-ready' by DM 80% of the time"
+  - "Works on Claude, GPT-4, and Gemini"
+  - "Produces useful partial report with Jira data alone"
+  - "Completes in under 30 seconds on any LLM"

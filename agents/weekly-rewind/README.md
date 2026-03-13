@@ -1,43 +1,54 @@
-# Weekly Rewind
+# 📊 Weekly Rewind
 
 > Generates a client-ready weekly status report from your sprint data.
 
-## What It Does
+## The Problem
 
-The Weekly Rewind scans your completed tickets, in-progress work, blockers, key decisions, and PR activity to produce a narrative status report that a Delivery Manager can send to stakeholders with minimal editing. It categorizes completed work, surfaces risks before they become surprises, and computes sprint health metrics — turning 2 hours of Friday report-writing into 30 seconds of AI processing.
+Delivery Managers spend 2+ hours every Friday compiling status updates from Jira, Slack, and GitHub into a client-ready report. They open three tools, cross-reference tickets against PRs, summarize decisions from Slack threads, compute sprint health metrics by hand, and format everything into prose that stakeholders can actually read. The Weekly Rewind does this in 30 seconds — it scans your completed tickets, in-progress work, blockers, key decisions, and PR activity to produce a narrative status report you can send to stakeholders with minimal editing.
+
+## What You Get
+
+A single-page weekly status report containing:
+
+- **Highlights** — the 3 most important things that happened this week, in business language
+- **Completed work** — items finished this sprint with story points and evidence
+- **In Progress** — active work with risk flags for stale or blocked items
+- **Risks & Blockers** — issues that need attention, with recommended actions
+- **Key Decisions** — team decisions captured from Slack (when Slack data is provided)
+- **Next Week Outlook** — what to expect in the coming week
+- **Sprint Health** — progress percentage, story points, blocker count, overall status
 
 ## Quick Start
 
-### Level 1 — Paste (any AI tool, 2 minutes)
+### Option A: Use Sample Data (2 minutes)
 
-1. Copy the entire contents of [`prompt.md`](prompt.md)
-2. Copy the sample data from [`examples/input-sample.json`](examples/input-sample.json)
-3. Open any AI assistant — [Claude](https://claude.ai), [ChatGPT](https://chat.openai.com), [Gemini](https://gemini.google.com), or GitHub Copilot
-4. Paste the prompt first, then paste the data on the next line
-5. Read your report
+1. Open [`prompt.md`](prompt.md) and copy everything
+2. Open [`examples/sample-input.json`](examples/sample-input.json) and copy the data
+3. Go to any AI assistant — [Claude](https://claude.ai), [ChatGPT](https://chat.openai.com), [Gemini](https://gemini.google.com)
+4. Paste the prompt first, then paste the data
+5. Get your report
 
-**Try it now with sample data:**
+The sample data uses Project Mercury (a fictional payment platform migration) with 8 sprint tickets, 4 PRs, and 3 Slack decisions. Compare your output to [`examples/sample-output.md`](examples/sample-output.md).
 
-```
-1. Open prompt.md in this directory and copy everything
-2. Open examples/input-sample.json and copy everything
-3. Go to https://claude.ai (or any AI chat)
-4. Paste the prompt, press Enter
-5. Paste the JSON data, press Enter
-6. You'll get a report like the one in examples/output-sample.md
-```
+### Option B: Use Your Own Data (10 minutes)
 
-**Using your own data instead of the sample:**
+**Step 1 — Export Jira sprint data:**
 
 Replace the sample JSON with your own Jira export. The minimum required fields per ticket are: `key`, `summary`, `status`, `story_points`, `type`, `priority`. See [`guides/export-your-data.md`](../../guides/export-your-data.md) for export instructions.
 
-### Level 2 — Connected (Claude Code + MCP)
+**Step 2 — (Optional) Add GitHub PRs and Slack decisions:**
+
+Adding PR data enables stale PR detection and cross-referencing. Slack data enables the Key Decisions section.
+
+**Step 3 — Run the report:**
+
+Paste the prompt first, then paste your data into any AI assistant.
+
+### Option C: Claude Code with MCP (L2)
 
 With MCP configured, Claude Code can fetch your data automatically:
 
 ```bash
-# One-time setup: configure MCP servers (see mcp/README.md)
-# Then run:
 claude "Fetch the current sprint from Jira and run the weekly rewind"
 ```
 
@@ -49,15 +60,11 @@ claude /weekly-rewind
 
 See [`guides/quickstart-claude-code.md`](../../guides/quickstart-claude-code.md) for full setup instructions.
 
-### Level 3 — Orchestrated (Automated)
-
-> Coming in H3
-
-Automated weekly reports via cron + Slack posting. The agent fetches fresh data from Jira/GitHub/Slack via MCP, generates the report, and posts it to your team's Slack channel every Friday at 4pm.
+> **L3 — Orchestrated (coming in H3):** Automated weekly reports via cron + Slack posting. The agent fetches fresh data from Jira/GitHub/Slack via MCP, generates the report, and posts it to your team's Slack channel every Friday at 4pm.
 
 ## Example Output
 
-The following report was generated from the sample data in [`examples/input-sample.json`](examples/input-sample.json):
+The following report was generated from the sample data in [`examples/sample-input.json`](examples/sample-input.json):
 
 ---
 
@@ -105,6 +112,14 @@ The reconciliation dashboard (MERC-231) should merge early next week once final 
 
 ---
 
+## How It Works
+
+1. **Parse**: read Jira tickets, GitHub PRs, and Slack messages from the provided data
+2. **Categorize**: group tickets by status (completed, in progress, blocked, to do)
+3. **Cross-reference**: match PRs to tickets for evidence-based status and stale detection
+4. **Analyze**: compute sprint health metrics, identify risks, flag scope changes
+5. **Narrate**: produce a business-language report with highlights, risks, and next steps
+
 ## Configuration
 
 See [`config.yaml`](config.yaml) for tunable parameters:
@@ -116,3 +131,16 @@ See [`config.yaml`](config.yaml) for tunable parameters:
 | `stale_threshold_days` | `3` | Days without PR activity before flagging as stale |
 | `max_items_per_section` | `10` | Cap per section before summarizing |
 | `sections.*` | all `true` | Toggle individual sections on/off |
+
+## Limitations
+
+- Context window limits may truncate reports for very large sprints (30+ tickets)
+- Narrative quality varies by LLM — Claude and GPT-4 produce the most natural prose
+- Accuracy depends entirely on input data quality — garbage in, garbage out
+- Does not verify ticket status against code activity (use Watermelon Auditor for that)
+
+## Related Agents
+
+- [Morning Scan](../morning-scan/) — Daily standup preparation (complements weekly cadence)
+- [Watermelon Auditor](../watermelon-auditor/) — Verifies reported status against GitHub activity
+- [Blocker Detective](../blocker-detective/) — Surfaces stuck work before standup

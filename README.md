@@ -67,7 +67,7 @@ The reconciliation dashboard (MERC-231) should merge early next week once final 
 ### Option A: Any AI Tool (no setup)
 
 1. Copy the agent prompt from [`agents/weekly-rewind/prompt.md`](agents/weekly-rewind/prompt.md)
-2. Copy the sample data from [`agents/weekly-rewind/examples/input-sample.json`](agents/weekly-rewind/examples/input-sample.json)
+2. Copy the sample data from [`agents/weekly-rewind/examples/sample-input.json`](agents/weekly-rewind/examples/sample-input.json)
 3. Paste both into [Claude](https://claude.ai), [ChatGPT](https://chat.openai.com), or any AI assistant
 4. Get your report
 
@@ -103,9 +103,7 @@ Full guide: [`guides/quickstart-claude-code.md`](guides/quickstart-claude-code.m
 | [**Morning Scan**](agents/morning-scan/) | Surfaces blockers and priorities before standup | Daily | ~20min/day |
 | [**Watermelon Auditor**](agents/watermelon-auditor/) | Verifies Jira status against actual code activity | Per sprint | Trust in data |
 | [**Blocker Detective**](agents/blocker-detective/) | Detects stuck PRs, failing CI, overloaded devs | Daily | Early warning |
-| [**Sprint Retro Prep**](agents/sprint-retro-prep/) | Pre-populates retrospectives with sprint facts | Per sprint | Better retros |
-
-Agents without a linked README are planned for future horizons.
+| [**Sprint Retro Prep**](agents/sprint-retro-prep/) | Pre-populates retrospectives with sprint facts (planned) | Per sprint | Better retros |
 
 ---
 
@@ -144,10 +142,10 @@ We welcome new agents that target real delivery pain points. Before building:
 3. Test on sample data
 4. Keep it portable (2+ LLMs)
 
-Full guidelines: [`STRATEGY.md`](STRATEGY.md)
+Full guidelines: [`CONTRIBUTING.md`](CONTRIBUTING.md)
 
 ---
 
 ## License
 
-See [`archive/v1/LICENSE`](archive/v1/LICENSE).
+See [`LICENSE`](LICENSE).

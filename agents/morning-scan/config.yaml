@@ -1,16 +1,77 @@
 # Morning Scan — Configuration
 
-# Stale PR threshold (hours without review)
-stale_pr_hours: 48
+name: morning-scan
+version: "1.0.0"
+description: "Surfaces blockers and priorities before standup"
 
-# Overload threshold (active tickets per developer)
-overload_threshold: 5
+# Problem Card
+frustration: "meeting-overload"
+frustration_rank: 4
+roles: ["delivery-manager", "scrum-master"]
 
-# Idle threshold (active tickets per developer — flag if below)
-idle_threshold: 1
+# Complexity levels
+levels:
+  L1:
+    status: "ready"
+    interface: "paste"
+    setup: "none"
+  L2:
+    status: "planned"
+    interface: "mcp"
+    setup: "atlassian-mcp, github-mcp, slack-mcp"
+  L3:
+    status: "planned"
+    interface: "orchestrated"
+    setup: "mcp + watermelon-auditor + blocker-detective"
 
-# CI failure threshold (consecutive failures to flag)
-ci_failure_threshold: 2
+# Data requirements
+inputs:
+  - name: "jira-sprint-data"
+    format: "JSON or CSV"
+    required: true
+    description: "Sprint tickets with status, assignee, dates"
+  - name: "github-prs"
+    format: "JSON"
+    required: false
+    fallback: "PR status section omitted"
+  - name: "github-commits"
+    format: "JSON"
+    required: false
+    fallback: "Overnight activity section omitted"
+  - name: "ci-builds"
+    format: "JSON"
+    required: false
+    fallback: "CI health section omitted"
+  - name: "slack-decisions"
+    format: "JSON"
+    required: false
+    fallback: "Slack context omitted"
 
-# Show overnight changes from the last N hours
-overnight_window_hours: 16
+# Output
+outputs:
+  - name: "morning-briefing"
+    format: "markdown"
+    description: "Pre-standup briefing with blockers, priorities, team load, CI health"
+
+# Tunable parameters
+config:
+  stale_pr_hours: 48
+  overload_threshold: 5
+  idle_threshold: 1
+  ci_failure_threshold: 2
+  overnight_window_hours: 16
+
+# Sections to include (set to false to hide)
+sections:
+  needs_attention: true
+  overnight_changes: true
+  todays_focus: true
+  team_load: true
+  build_health: true
+
+# Success criteria
+success_criteria:
+  - "Surfaces all known blockers from sample data"
+  - "Works on Claude, GPT-4, and Gemini"
+  - "Produces useful briefing with Jira data alone"
+  - "Ready to present at standup within 2 minutes of generation"

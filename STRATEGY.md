@@ -1,10 +1,21 @@
-# Strategy — Delivery Management Skills v2.0
+# Strategy — Delivery Management Skills v2.2
 
 > A toolkit of AI agents for Delivery Managers, Scrum Masters, and Program Managers.
 
 ## Vision
 
 Delivery Managers spend 30-40% of their time on information gathering and report compilation — work that is repetitive, error-prone, and low-leverage. This project provides AI agents that automate those tasks, giving DMs their time back for the work that actually requires human judgment: unblocking teams, managing stakeholders, and making trade-off decisions.
+
+## Current State
+
+**What's Shipped (4 agents):**
+- **Weekly Rewind** — Generates client-ready weekly status reports from sprint data
+- **Morning Scan** — Surfaces blockers and priorities before standup
+- **Watermelon Auditor** — Cross-references Jira status against GitHub activity to detect false reporting
+- **Blocker Detective** — Surfaces stuck PRs, failing CI, stale work, and overloaded developers before standup
+
+**What's Next (placeholder in repo):**
+- **Sprint Retro Prep** — Pre-populates retrospectives with sprint facts (planned)
 
 ## Design Principles
 
@@ -56,7 +67,7 @@ Every agent must trace back to a specific, documented frustration experienced by
 │  Portable prompts in agents/*/prompt.md     │
 │  Config in agents/*/config.yaml             │
 │  Examples in agents/*/examples/             │
-│  Shared parsers/formatters in lib/          │
+│  Shared parsers/formatters in reference/     │
 ├─────────────────────────────────────────────┤
 │  Data Layer                                 │
 │  JSON from Jira, GitHub, Slack, CI          │
@@ -116,8 +127,8 @@ Build the remaining priority agents and add cross-referencing capabilities.
 
 | Deliverable | Status | Effort |
 |-------------|--------|--------|
-| Watermelon Auditor agent | Planned | 1 day |
-| Blocker Detective agent | Planned | 1 day |
+| Watermelon Auditor agent | ✅ Done | 1 day |
+| Blocker Detective agent | ✅ Done | 1 day |
 | Sprint Retro Prep agent | Planned | 1 day |
 | Agent evaluation framework (golden outputs, rubrics) | Planned | 1 day |
 | Multi-agent composition patterns | Planned | 0.5 day |
@@ -138,13 +149,13 @@ Enable scheduled, unattended agent execution with output delivery.
 
 Selected based on documented frustrations from real Delivery Managers (see [`docs/frustrations.md`](docs/frustrations.md)):
 
-| Agent | Pain Point | Frequency | Users | Priority |
-|-------|-----------|-----------|-------|----------|
-| **Weekly Rewind** | Friday status reports take 2h of copy-paste | Weekly | DM, PM, stakeholders | H1 |
-| **Morning Scan** | Morning triage across 3 tools takes 20min | Daily | DM, Scrum Master | H1 |
-| **Watermelon Auditor** | Jira says "Done" but no code was shipped | Per sprint | DM, Engineering Lead | H2 |
-| **Blocker Detective** | Blockers discovered too late at standup | Daily | DM, Scrum Master | H2 |
-| **Sprint Retro Prep** | Retros start cold with no data | Per sprint | Scrum Master | H2 |
+| Agent | Pain Point | Frequency | Users | Status |
+|-------|-----------|-----------|-------|--------|
+| **Weekly Rewind** | Friday status reports take 2h of copy-paste | Weekly | DM, PM, stakeholders | ✅ Shipped |
+| **Morning Scan** | Morning triage across 3 tools takes 20min | Daily | DM, Scrum Master | ✅ Shipped |
+| **Watermelon Auditor** | Jira says "Done" but no code was shipped | Per sprint | DM, Engineering Lead | ✅ Shipped |
+| **Blocker Detective** | Blockers discovered too late at standup | Daily | DM, Scrum Master | ✅ Shipped |
+| **Sprint Retro Prep** | Retros start cold with no data | Per sprint | Scrum Master | Planned |
 
 ## What We Will NOT Build
 
@@ -163,7 +174,7 @@ Every agent must meet these criteria before shipping:
 - **Portable**: works with at least 2 different LLMs (Claude + GPT-4 minimum).
 - **Graceful degradation**: partial data produces partial reports with clear warnings, never errors.
 - **Correct field references**: every field name in the prompt must match the actual JSON schema in `data/`.
-- **Example-driven**: includes `input-sample.json` (real data subset) and `output-sample.md` (realistic output).
+- **Example-driven**: includes `sample-input.*` (real data subset) and `sample-output.md` (realistic output).
 - **Documented**: README with L1/L2/L3 usage paths, configuration reference.
 
 ### Prompt Quality
@@ -201,11 +212,11 @@ delivery-management-skills/
 │   │   ├── README.md         # Usage guide (L1/L2/L3)
 │   │   └── examples/         # Input sample + output sample
 │   ├── morning-scan/         # Daily morning briefing
-│   ├── watermelon-auditor/   # Status vs reality auditor (H2)
-│   ├── blocker-detective/    # Stuck work detector (H2)
-│   └── sprint-retro-prep/   # Retro data preparation (H2)
+│   ├── watermelon-auditor/   # Status vs reality auditor
+│   ├── blocker-detective/    # Stuck work detector
+│   └── sprint-retro-prep/   # Retro data preparation (planned)
 ├── data/                     # Sample datasets (Project Mercury)
-├── lib/                      # Shared prompt fragments
+├── reference/                # Reference documents (parsers, formatters)
 │   ├── parsers/              # Data parsing conventions
 │   └── formatters/           # Output formatting standards
 ├── mcp/                      # MCP server configurations (L2)
@@ -228,18 +239,18 @@ delivery-management-skills/
 
 2. **Build L1 first**: Create `agents/{name}/prompt.md` that works as a copy-paste prompt in any AI chat. This is the minimum viable agent.
 
-3. **Test on sample data**: Create `examples/input-sample.json` from existing `data/` files and generate `examples/output-sample.md`. Verify the output is useful and accurate.
+3. **Test on sample data**: Create `examples/sample-input.md` from existing `data/` files and generate `examples/sample-output.md`. Verify the output is useful and accurate.
 
 4. **Keep it portable**: Test on at least 2 LLMs. No vendor-specific syntax in the prompt.
 
 5. **Add config and docs**: Create `config.yaml` for tunable parameters and `README.md` with L1/L2/L3 usage paths.
 
-6. **Submit for review**: Open a PR with the full agent package. Include the output-sample.md as evidence of quality.
+6. **Submit for review**: Open a PR with the full agent package. Include the sample-output.md as evidence of quality.
 
 ### Improving an Existing Agent
 
 - Field name changes must be verified against `data/` schemas.
-- Output format changes must update both `prompt.md` and `examples/output-sample.md`.
+- Output format changes must update both `prompt.md` and `examples/sample-output.md`.
 - New processing logic must include test cases in the input sample that exercise it.
 
 ### What Makes a Good Agent
@@ -248,3 +259,7 @@ delivery-management-skills/
 - Produces output a DM can use directly (not raw data to interpret).
 - Works with partial data (graceful degradation).
 - Fits the 3-level architecture (L1 paste, L2 connected, L3 orchestrated).
+
+---
+
+*Last updated: March 13, 2026 — v2.2*
