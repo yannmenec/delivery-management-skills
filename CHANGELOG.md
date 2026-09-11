@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.3.0] - 2026-09-11
+
+### Changed
+- Rewrote README.md: the Weekly Rewind sample excerpt now discloses that it covers 8 of the 20
+  tickets in Sprint 42 (37 of 78 story points) instead of reading as whole-sprint health; removed
+  the unsupported "Time Saved" column and the non-resolving `your-org` clone URL; dropped
+  `sprint-retro-prep` from the agent list (its directory has no prompt); added an explicit
+  no-automated-tests / no-continuous-integration statement.
+
 ## [2.2.0] - 2026-03-13
 
 ### Added
